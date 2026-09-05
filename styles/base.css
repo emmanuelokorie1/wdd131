@@ -1,0 +1,202 @@
+/* Base Variables & Setup */
+:root {
+    --primary-color: #204B74; /* Dark blue from screenshot */
+    --nav-color: #383838; /* Dark grey for nav */
+    --text-color: #333;
+    --bg-color: #ffffff;
+    --header-font: 'Montserrat', sans-serif;
+    --body-font: 'Roboto', sans-serif;
+}
+
+body {
+    font-family: var(--body-font);
+    margin: 0;
+    padding: 0;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+/* Header & Typography */
+header {
+    text-align: center;
+}
+
+.header-top {
+    background-color: var(--primary-color);
+    color: #ffffff;
+    padding: 1.2rem 0;
+}
+
+#course-title {
+    display: block; /* Required by assignment */
+    font-family: var(--header-font);
+    font-size: 1.8rem;
+    font-weight: 400;
+}
+
+/* Navigation - Flexbox */
+nav {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: var(--nav-color);
+    padding: 0.8rem 0;
+}
+
+nav a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 1.1rem;
+    padding: 0.5rem 1rem;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: #ddd;
+}
+
+/* Main Content Area */
+main {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+}
+
+h1 {
+    text-align: center;
+    font-family: var(--header-font);
+    color: #333;
+    font-size: 2.2rem;
+    margin-bottom: 1.5rem;
+    font-weight: 600;
+}
+
+/* CSS Grid for Cards */
+.cards-container {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 1rem;
+}
+
+@media (max-width: 768px) {
+    .cards-container {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Cards */
+.card {
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    background-color: #fff;
+    overflow: hidden;
+}
+
+.card h2 {
+    background-color: var(--primary-color);
+    color: #ffffff;
+    margin: 0;
+    padding: 0.8rem;
+    text-align: center;
+    font-family: var(--body-font);
+    font-size: 1.2rem;
+}
+
+.card-content {
+    padding: 1.2rem;
+}
+
+/* About Me layout */
+.about-top {
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start;
+}
+
+.about-top p {
+    flex: 1;
+    margin: 0;
+    font-size: 0.95rem;
+}
+
+.about-top img {
+    width: 140px;
+    height: auto;
+    object-fit: cover;
+}
+
+.location-heading {
+    text-align: center;
+    border-bottom: 2px solid #ddd;
+    margin: 1.5rem 2rem;
+    padding-bottom: 0.5rem;
+    font-size: 1.05rem;
+    color: #222;
+}
+
+.about-bottom {
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start;
+}
+
+.about-bottom figure {
+    margin: 0;
+    text-align: center;
+    width: 120px;
+    flex-shrink: 0;
+}
+
+.about-bottom img {
+    width: 100%;
+    height: auto;
+    border: 1px solid #ccc;
+}
+
+.about-bottom figcaption {
+    font-size: 0.75rem;
+    font-style: italic;
+    color: #555;
+    margin-top: 0.25rem;
+}
+
+.about-bottom p {
+    flex: 1;
+    margin: 0;
+    font-size: 0.95rem;
+}
+
+/* Resources List */
+.resources ul {
+    margin: 0;
+    padding-left: 1.5rem;
+}
+
+.resources li {
+    margin-bottom: 0.6rem;
+}
+
+.resources a {
+    color: #204B74;
+    text-decoration: underline;
+}
+
+/* Footer */
+footer {
+    background-color: var(--primary-color);
+    color: #ffffff;
+    text-align: center;
+    padding: 1.5rem 1rem;
+    margin-top: 3rem;
+}
+
+footer p {
+    margin: 0.4rem 0;
+    font-size: 1rem;
+}
+
+#lastModified {
+    color: #ffff00;
+    font-size: 0.9rem;
+}
