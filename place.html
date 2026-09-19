@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WDD 131 - Country Page - Madagascar</title>
+    <meta name="description" content="Country page about Madagascar for WDD 131">
+    <meta name="author" content="Emmanuel Okorie">
+    <link rel="stylesheet" href="styles/place.css">
+    <script src="scripts/place.js" defer></script>
+</head>
+<body>
+    <header>
+        <h1>Madagascar</h1>
+    </header>
+    <main>
+        <picture class="hero-img">
+            <source srcset="images/madagascar-large.webp" media="(min-width: 768px)">
+            <img src="images/madagascar-small.webp" alt="Lemurs in Madagascar" width="500" height="750">
+        </picture>
+        <section class="card data-card">
+            <h2>Data</h2>
+            <div class="info-container">
+                <span class="label">Area:</span> <span class="value">587,041 sq km</span>
+                <span class="label">Population:</span> <span class="value">27,691,018</span>
+                <span class="label">Capital:</span> <span class="value">Antananarivo</span>
+                <span class="label">Languages:</span> <span class="value">Malagasy, French</span>
+                <span class="label">Currency:</span> <span class="value">Malagasy Ariary</span>
+                <span class="label">Time Zone:</span> <span class="value">UTC+3</span>
+                <span class="label">Calling Code:</span> <span class="value">+261</span>
+                <span class="label">Internet TLD:</span> <span class="value">.mg</span>
+            </div>
+        </section>
+        
+        <section class="card weather-card">
+            <h2>Weather</h2>
+            <div class="weather-icon-container">
+                <svg class="weather-icon" xmlns="http://www.w3.org/2000/svg" height="64" viewBox="0 0 24 24" width="64" fill="#007a33"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M19.35 10.04C18.67 6.59 15.64 4 12 4 9.11 4 6.6 5.64 5.36 8.04 2.34 8.36 0 10.91 0 14c0 3.31 2.69 6 6 6h13c2.76 0 5-2.24 5-5 0-2.64-2.05-4.78-4.65-4.96zM19 18H6c-2.21 0-4-1.79-4-4s1.79-4 4-4h.71C7.37 7.69 9.48 6 12 6c3.04 0 5.5 2.46 5.5 5.5v.5H19c1.66 0 3 1.34 3 3s-1.34 3-3 3z"/></svg>
+            </div>
+            <div class="info-container">
+                <span class="label">Temperature:</span> <span class="value"><span id="temperature">10</span> &deg;C</span>
+                <span class="label">Conditions:</span> <span class="value">Partly Cloudy</span>
+                <span class="label">Wind:</span> <span class="value"><span id="windSpeed">5</span> km/h</span>
+                <span class="label">Wind Chill:</span> <span class="value"><span id="windChill"></span></span>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; <span id="currentYear"></span> &#127800; Emmanuel Okorie &#127800; Madagascar</p>
+        <p>Last Modification: <span id="lastModified"></span></p>
+    </footer>
+</body>
+</html>
