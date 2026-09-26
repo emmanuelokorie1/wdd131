@@ -1,0 +1,58 @@
+/* Larger Screen View (min-width: 600px) */
+
+header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0;
+}
+
+.header-top {
+    padding: 1rem 0;
+}
+
+/* Hide hamburger button */
+#menu-button {
+    display: none;
+}
+
+/* Show navigation as flex row */
+nav {
+    display: block !important;
+    width: 100%;
+}
+
+nav ul {
+    flex-direction: row;
+    justify-content: center;
+}
+
+nav ul li a {
+    padding: 0.85rem 1.25rem;
+}
+
+/* Update grid layout */
+.gallery {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+}
+
+@media screen and (min-width: 960px) {
+    header {
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 0 2rem;
+    }
+
+    .header-top {
+        padding: 1rem 0;
+    }
+    
+    nav {
+        width: auto;
+    }
+
+    .gallery {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
