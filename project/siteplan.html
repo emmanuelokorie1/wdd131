@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WDD 131 – Zen Café Lagos – Website Planning Document</title>
+    <meta name="description" content="Website planning document for Zen Café Lagos, featuring brand identity, site purpose, audience scenarios, color schema, typography, and responsive wireframes for WDD 131.">
+    <meta name="author" content="Okorie Emmanuel">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/siteplan.css">
+    <script src="scripts/siteplan.js" defer></script>
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <div class="brand-wrapper">
+                <img src="images/site-logo.svg" alt="Zen Café Lagos Logo" class="site-logo" width="280" height="70">
+                <span class="site-title">Zen Café Lagos</span>
+            </div>
+            <span class="plan-subtitle">Website Planning Document &bull; WDD 131</span>
+        </div>
+    </header>
+
+    <main>
+        <!-- Section 1: Site Name -->
+        <section class="plan-section" id="site-name">
+            <div class="section-header">
+                <span class="section-icon">&#9749;</span>
+                <h2>1. Site Name</h2>
+            </div>
+            <p><strong>Proposed Site Name:</strong> Zen Café Lagos</p>
+            <div class="callout">
+                <p><strong>Rationale:</strong> "Zen Café Lagos" represents a tranquil, health-centered café, artisan coffee roastery, and co-working sanctuary situated in the vibrant coastal district of Lekki, Lagos, Nigeria. The name blends the concept of mindfulness, calm productivity, and wholesome living ("Zen") with artisanal food culture and community gathering ("Café"), grounded in its local geographic identity ("Lagos").</p>
+            </div>
+            <p><strong>Optional Domain Availability:</strong> <code>zencafelagos.com</code> (or <code>zencafe-lagos.org</code>)</p>
+        </section>
+
+        <!-- Section 2: Site Purpose -->
+        <section class="plan-section" id="site-purpose">
+            <div class="section-header">
+                <span class="section-icon">&#127919;</span>
+                <h2>2. Site Purpose</h2>
+            </div>
+            <p>The purpose of the Zen Café Lagos website is to serve as an inviting, comprehensive digital hub for customers, remote professionals, students, and health enthusiasts in Lagos. The website fulfills several key objectives:</p>
+            <ul>
+                <li><strong>Showcase Artisanal Offerings:</strong> Present an interactive, dynamic menu featuring specialty single-origin coffees, organic smoothie bowls, cold-pressed juices, and fresh baked goods with dietary filters (vegan, gluten-free, keto).</li>
+                <li><strong>Promote the Co-Working Sanctuary:</strong> Highlight the amenities of the café's quiet workspace zone, including high-speed fiber internet, ergonomic seating, private call booths, and power backup.</li>
+                <li><strong>Facilitate Reservations &amp; Inquiries:</strong> Provide an intuitive booking form where visitors can reserve desks, meeting rooms, or tables for group gatherings.</li>
+                <li><strong>Community &amp; Location Information:</strong> Display operating hours, precise location in Lekki Phase 1, customer reviews, and upcoming wellness and coffee workshop events.</li>
+            </ul>
+        </section>
+
+        <!-- Section 3: Scenarios -->
+        <section class="plan-section" id="scenarios">
+            <div class="section-header">
+                <span class="section-icon">&#128101;</span>
+                <h2>3. Scenarios</h2>
+            </div>
+            <p>The target audience includes remote tech workers, creative freelancers, university students, and health-conscious food lovers living in or visiting Lagos. The website's architecture and content are driven by answering real user questions:</p>
+            
+            <div class="scenarios-grid">
+                <div class="scenario-card">
+                    <h3>Scenario 1: Remote Worker / Freelancer</h3>
+                    <p><em>"Does Zen Café Lagos provide reliable high-speed internet, ample power outlets, and a distraction-free work environment for remote work, and can I reserve a quiet desk in advance?"</em></p>
+                </div>
+                <div class="scenario-card">
+                    <h3>Scenario 2: Health &amp; Nutrition Enthusiast</h3>
+                    <p><em>"What nutritious, dairy-free, or plant-based breakfast options and organic smoothie bowls are available, and what ingredients are used in each bowl?"</em></p>
+                </div>
+                <div class="scenario-card">
+                    <h3>Scenario 3: Event Organizer / Weekend Visitor</h3>
+                    <p><em>"Where exactly in Lekki is the café located, what are the weekend opening hours, and how can I inquire about booking a small team table or meeting booth?"</em></p>
+                </div>
+                <div class="scenario-card">
+                    <h3>Scenario 4: Specialty Coffee Connoisseur</h3>
+                    <p><em>"What coffee beans and brewing methods (Pour-over, AeroPress, Cold Brew) are featured this season, and can I purchase freshly roasted beans to take home?"</em></p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 4: Color Scheme -->
+        <section class="plan-section" id="color-scheme">
+            <div class="section-header">
+                <span class="section-icon">&#127912;</span>
+                <h2>4. Color Scheme</h2>
+            </div>
+            <p>The chosen color scheme reflects mindfulness, fresh organic living, and the welcoming warmth of handcrafted hospitality. These colors meet WCAG AA and AAA accessibility contrast standards across all viewports and are actively used to style this planning document.</p>
+
+            <div class="palette-grid">
+                <div class="color-card">
+                    <div class="color-swatch swatch-primary">#1B4332</div>
+                    <div class="color-info">
+                        <div class="color-name">Deep Forest Green</div>
+                        <div class="color-hex">Primary: #1B4332</div>
+                        <div class="color-usage">Main header, headings (h1, h2, h3), primary buttons, and footer.</div>
+                    </div>
+                </div>
+
+                <div class="color-card">
+                    <div class="color-swatch swatch-secondary">#C86D51</div>
+                    <div class="color-info">
+                        <div class="color-name">Warm Terracotta</div>
+                        <div class="color-hex">Secondary: #C86D51</div>
+                        <div class="color-usage">Accent highlights, CTA badges, link hovers, and border accents.</div>
+                    </div>
+                </div>
+
+                <div class="color-card">
+                    <div class="color-swatch swatch-light">#F8F9FA</div>
+                    <div class="color-info">
+                        <div class="color-name">Soft Off-White</div>
+                        <div class="color-hex">Neutral Light: #F8F9FA</div>
+                        <div class="color-usage">Overall body canvas background and secondary card backgrounds.</div>
+                    </div>
+                </div>
+
+                <div class="color-card">
+                    <div class="color-swatch swatch-dark">#222222</div>
+                    <div class="color-info">
+                        <div class="color-name">Charcoal Black</div>
+                        <div class="color-hex">Neutral Dark: #222222</div>
+                        <div class="color-usage">Body text, paragraphs, labels, and high-contrast readable copy.</div>
+                    </div>
+                </div>
+            </div>
+
+            <h3>Color Application Matrix</h3>
+            <table class="schema-table">
+                <thead>
+                    <tr>
+                        <th>Page Element</th>
+                        <th>Color Name</th>
+                        <th>Hex Code</th>
+                        <th>Contrast &amp; Accessibility Role</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Header &amp; Footer Background</td>
+                        <td><span class="color-badge" style="background-color: #1B4332;"></span> Deep Forest Green</td>
+                        <td><code>#1B4332</code></td>
+                        <td>Grounding brand element with white text (Contrast Ratio 11.2:1 &ndash; AAA compliant)</td>
+                    </tr>
+                    <tr>
+                        <td>Section Headings (h1, h2, h3)</td>
+                        <td><span class="color-badge" style="background-color: #1B4332;"></span> Deep Forest Green</td>
+                        <td><code>#1B4332</code></td>
+                        <td>Establishes clear typographic hierarchy against light backgrounds</td>
+                    </tr>
+                    <tr>
+                        <td>Call-to-Action Buttons &amp; Badges</td>
+                        <td><span class="color-badge" style="background-color: #C86D51;"></span> Warm Terracotta</td>
+                        <td><code>#C86D51</code></td>
+                        <td>Vibrant warm focal point guiding user actions and interactive states</td>
+                    </tr>
+                    <tr>
+                        <td>Page Canvas Background</td>
+                        <td><span class="color-badge" style="background-color: #F8F9FA;"></span> Soft Off-White</td>
+                        <td><code>#F8F9FA</code></td>
+                        <td>Calm, glare-free background surface promoting comfortable reading</td>
+                    </tr>
+                    <tr>
+                        <td>Card &amp; Form Containers</td>
+                        <td><span class="color-badge" style="background-color: #FFFFFF;"></span> Pure White</td>
+                        <td><code>#FFFFFF</code></td>
+                        <td>Elevated content surfaces with subtle borders and shadow</td>
+                    </tr>
+                    <tr>
+                        <td>Body Copy &amp; Paragraphs</td>
+                        <td><span class="color-badge" style="background-color: #222222;"></span> Charcoal Black</td>
+                        <td><code>#222222</code></td>
+                        <td>Optimum legibility and contrast ratio of 15.8:1 on white surfaces</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <!-- Section 5: Typography -->
+        <section class="plan-section" id="typography">
+            <div class="section-header">
+                <span class="section-icon">&#128221;</span>
+                <h2>5. Typography</h2>
+            </div>
+            <p>The typography pairing blends modern geometric precision for headings with clean, highly readable sans-serif typography for running body text, imported from Google Fonts:</p>
+
+            <div class="typography-showcase">
+                <div class="font-box">
+                    <div class="font-name">Headings Font: Montserrat</div>
+                    <div class="font-details">Google Font &bull; Weights: 600 (SemiBold), 700 (Bold)</div>
+                    <div class="font-specimen-heading">Zen Café Lagos: Eat Fresh, Live Zen</div>
+                    <p class="font-details"><strong>Applied to:</strong> Top navigation branding, page titles (<code>&lt;h1&gt;</code>), section headers (<code>&lt;h2&gt;</code>), card titles (<code>&lt;h3&gt;</code>), and call-to-action buttons.</p>
+                </div>
+
+                <div class="font-box">
+                    <div class="font-name">Body Font: Roboto</div>
+                    <div class="font-details">Google Font &bull; Weights: 400 (Regular), 500 (Medium)</div>
+                    <div class="font-specimen-body">Experience wholesome nourishment in Lekki Phase 1. Handcrafted organic smoothie bowls, artisanal pour-over coffees, and quiet workspaces tailored for focused productivity.</div>
+                    <p class="font-details"><strong>Applied to:</strong> Body copy, paragraphs, list items, table text, form input fields, labels, and footer meta details.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 6: Wireframes -->
+        <section class="plan-section" id="wireframes">
+            <div class="section-header">
+                <span class="section-icon">&#128208;</span>
+                <h2>6. Wireframes</h2>
+            </div>
+            <p>Wireframes establish the content hierarchy, component positioning, and user interaction model for the Zen Café Lagos home page across mobile and desktop viewports, following the PARC (Proximity, Alignment, Repetition, and Contrast) design principles.</p>
+
+            <div class="wireframes-container">
+                <!-- Mobile Wireframe -->
+                <div class="wireframe-card">
+                    <h3>Mobile View Wireframe (Small Screens &bull; 375px &ndash; 600px)</h3>
+                    <p class="wireframe-desc">A single-column vertical layout optimized for thumb-driven navigation, fast scanning, and touch-friendly tap targets.</p>
+                    <div class="wireframe-preview">
+                        <img src="images/wireframe-mobile.svg" alt="Mobile Home Page Wireframe Diagram" width="380" height="920" loading="lazy">
+                    </div>
+                    <div class="wireframe-annotations">
+                        <h4>Mobile Layout Specifications:</h4>
+                        <ul>
+                            <li><strong>Sticky Header:</strong> Brand logo and title on the left with an accessible hamburger menu icon (<code>#menu-button</code>) toggling the navigation drawer.</li>
+                            <li><strong>Hero Banner:</strong> Compact hero image block with centered headline, concise tagline, and prominent call-to-action button (minimum 44px tap target).</li>
+                            <li><strong>Offerings Stack:</strong> Single-column card stack displaying Coffee, Smoothie Bowls, and Co-Working areas with thumbnail images, title, short description, and direct link.</li>
+                            <li><strong>Location &amp; Hours:</strong> Quick-reference interactive card with address in Lekki Phase 1, operating hours, and a direct reservation button.</li>
+                            <li><strong>Footer:</strong> Centered branding, secondary site links, copyright year, and dynamic document last-modified date.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Desktop Wireframe -->
+                <div class="wireframe-card">
+                    <h3>Desktop View Wireframe (Wider Viewports &bull; &ge; 960px)</h3>
+                    <p class="wireframe-desc">A multi-column grid layout utilizing the wider screen canvas for side-by-side content storytelling, multi-item visual browsing, and streamlined reservations.</p>
+                    <div class="wireframe-preview">
+                        <img src="images/wireframe-desktop.svg" alt="Desktop Home Page Wireframe Diagram" width="960" height="780" loading="lazy">
+                    </div>
+                    <div class="wireframe-annotations">
+                        <h4>Desktop Layout Specifications:</h4>
+                        <ul>
+                            <li><strong>Header &amp; Navigation:</strong> Brand logo on the left with full horizontal navigation links (Home, Menu &amp; Specials, Co-Working, Contact &amp; Reserve) and an accented "Reserve" action button.</li>
+                            <li><strong>Two-Column Hero:</strong> Left column features the primary headline, value proposition paragraph, and dual CTA buttons ("Explore Menu" and "Book a Workspace"). Right column showcases a high-resolution hero image of the café sanctuary.</li>
+                            <li><strong>Three-Column Offerings Grid:</strong> CSS Grid displaying three cards side-by-side (Artisan Coffee &amp; Teas, Organic Smoothie Bowls, Quiet Co-Working Space) with hover elevation and consistent visual alignment.</li>
+                            <li><strong>Two-Column Story &amp; Reservation Section:</strong> Left column shares the Zen story and operating hours; right column provides a streamlined table/desk reservation module.</li>
+                            <li><strong>Three-Column Footer:</strong> Organized into Brand Information, Quick Navigation Links, and Hours &amp; Dynamic Meta Details.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy;<span id="currentyear"></span> 🌸 Okorie Emmanuel 🌸 Lagos, Nigeria</p>
+        <p id="lastModified"></p>
+    </footer>
+</body>
+</html>
