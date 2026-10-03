@@ -1,0 +1,464 @@
+/* ==========================================================================
+   Product Review Form Styles - WDD 131
+   Design Principles: Alignment, Proximity, Repetition, Contrast, Usability
+   ========================================================================== */
+
+:root {
+    --primary-color: #3B0944;        /* Deep eggplant purple */
+    --primary-hover: #541162;
+    --primary-light: #6E1B7F;
+    --card-bg: #EAE6EE;              /* Subtle lavender-tinted neutral */
+    --card-border: #D1CCD7;
+    --input-bg: #FFFFFF;
+    --input-border: #5A5462;
+    --input-focus: #3B0944;
+    --text-primary: #1F1D24;
+    --text-secondary: #48434F;
+    --text-light: #FFFFFF;
+    --required-color: #9E1010;
+    --star-color: #2B2630;
+    --bg-page: #F6F5F8;
+    --shadow-card: 0 4px 14px rgba(0, 0, 0, 0.12);
+    --shadow-btn: 0 2px 5px rgba(0, 0, 0, 0.15);
+    --font-heading: 'Montserrat', sans-serif;
+    --font-body: 'Roboto', sans-serif;
+}
+
+/* Base Reset & Box Sizing */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-body);
+    font-size: 1rem;
+    line-height: 1.5;
+    color: var(--text-primary);
+    background-color: var(--bg-page);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Header */
+header {
+    background-color: var(--primary-color);
+    color: var(--text-light);
+    text-align: center;
+    padding: 0.6rem 1rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+}
+
+.site-tag {
+    font-family: var(--font-heading);
+    font-size: 0.85rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    font-weight: 500;
+    color: #F0E8F4;
+}
+
+/* Main Container */
+main {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 1.5rem 1rem 2.5rem;
+}
+
+/* Card Container */
+.form-card {
+    width: 100%;
+    max-width: 500px;
+    background-color: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-radius: 8px;
+    box-shadow: var(--shadow-card);
+    overflow: hidden;
+}
+
+/* Card Header Banner */
+.form-header {
+    background-color: var(--primary-color);
+    color: var(--text-light);
+    padding: 1rem 1.25rem;
+    text-align: center;
+}
+
+.form-header h1 {
+    font-family: var(--font-heading);
+    font-size: 1.55rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    color: var(--text-light);
+}
+
+/* Form Layout */
+.review-form {
+    padding: 1.5rem 1.25rem;
+}
+
+.form-group {
+    margin-bottom: 1.25rem;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Labels and Legends */
+label,
+legend {
+    font-family: var(--font-body);
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 0.4rem;
+}
+
+/* Required & Optional Badges */
+.required-indicator {
+    color: var(--required-color);
+    font-weight: 700;
+    font-size: 1.1rem;
+    line-height: 1;
+    margin-left: 0.2rem;
+}
+
+.optional-indicator,
+.subtext {
+    font-size: 0.82rem;
+    font-weight: 500;
+    color: var(--text-secondary);
+    font-style: italic;
+    margin-left: 0.25rem;
+}
+
+/* Text Inputs, Select, and Textarea */
+input[type="text"],
+input[type="date"],
+select,
+textarea {
+    width: 100%;
+    padding: 0.65rem 0.75rem;
+    font-family: var(--font-body);
+    font-size: 0.95rem;
+    color: var(--text-primary);
+    background-color: var(--input-bg);
+    border: 1px solid var(--input-border);
+    border-radius: 4px;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    min-height: 44px;
+}
+
+select {
+    cursor: pointer;
+    text-transform: capitalize;
+}
+
+select:invalid {
+    color: var(--text-secondary);
+}
+
+select option {
+    color: var(--text-primary);
+    text-transform: capitalize;
+    padding: 0.4rem;
+}
+
+textarea {
+    resize: vertical;
+    min-height: 110px;
+    line-height: 1.4;
+}
+
+/* Focus styles for keyboard accessibility */
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible,
+input[type="submit"]:focus-visible,
+.action-button:focus-visible {
+    outline: 3px solid var(--primary-light);
+    outline-offset: 2px;
+}
+
+/* Rating Fieldset & Star Display */
+.rating-fieldset {
+    border: none;
+    padding: 0;
+    margin-bottom: 1.25rem;
+}
+
+.rating-group {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    padding: 0.4rem 0.5rem 0.2rem;
+    background-color: rgba(255, 255, 255, 0.45);
+    border: 1px solid var(--card-border);
+    border-radius: 4px;
+}
+
+.rating-option {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+    padding: 0.25rem 0.35rem;
+    border-radius: 4px;
+    min-width: 44px;
+    min-height: 48px;
+    justify-content: space-between;
+    transition: background-color 0.2s ease, transform 0.15s ease;
+}
+
+.rating-option:hover {
+    background-color: rgba(59, 9, 68, 0.08);
+}
+
+.star-display {
+    font-size: 1.15rem;
+    line-height: 1.2;
+    color: var(--star-color);
+    letter-spacing: -1px;
+    user-select: none;
+    text-align: center;
+}
+
+.rating-option input[type="radio"] {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    accent-color: var(--primary-color);
+    margin-top: 0.35rem;
+}
+
+/* Features Checkbox Fieldset */
+.features-fieldset {
+    border: none;
+    padding: 0;
+    margin-bottom: 1.25rem;
+}
+
+.checkbox-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    padding-top: 0.35rem;
+}
+
+.checkbox-option {
+    display: flex;
+    align-items: center;
+    gap: 0.65rem;
+    min-height: 36px;
+}
+
+.checkbox-option input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    accent-color: var(--primary-color);
+}
+
+.checkbox-option label {
+    font-weight: 500;
+    font-size: 0.95rem;
+    margin-bottom: 0;
+    cursor: pointer;
+    color: var(--text-primary);
+}
+
+/* Submit Button */
+.submit-group {
+    margin-top: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+input[type="submit"] {
+    width: 100%;
+    min-height: 46px;
+    padding: 0.75rem 1.25rem;
+    font-family: var(--font-heading);
+    font-size: 1.05rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    color: var(--text-primary);
+    background-color: #E6E3EA;
+    border: 1.5px solid #827D8C;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease, box-shadow 0.2s ease;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+input[type="submit"]:hover {
+    background-color: var(--primary-color);
+    color: var(--text-light);
+    border-color: var(--primary-color);
+    box-shadow: var(--shadow-btn);
+}
+
+input[type="submit"]:active {
+    transform: translateY(1px);
+}
+
+/* Review Confirmation Page Styles */
+.confirmation-card {
+    text-align: center;
+}
+
+.confirmation-content {
+    padding: 2rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.success-icon {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    background-color: #2E7D32;
+    color: #FFFFFF;
+    font-size: 2.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.25rem;
+    box-shadow: 0 4px 10px rgba(46, 125, 50, 0.3);
+}
+
+.confirmation-content h2 {
+    font-family: var(--font-heading);
+    font-size: 1.45rem;
+    color: var(--primary-color);
+    margin-bottom: 0.75rem;
+}
+
+.confirmation-message {
+    color: var(--text-secondary);
+    font-size: 1rem;
+    max-width: 380px;
+    margin-bottom: 1.75rem;
+}
+
+.counter-container {
+    background-color: #FFFFFF;
+    border: 1px solid var(--card-border);
+    border-radius: 8px;
+    padding: 1.25rem 1.5rem;
+    width: 100%;
+    max-width: 360px;
+    margin-bottom: 2rem;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+.counter-label {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 0.5rem;
+}
+
+.counter-display {
+    margin: 0.5rem 0;
+}
+
+.counter-number {
+    display: inline-block;
+    font-family: var(--font-heading);
+    font-size: 2.75rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    line-height: 1;
+}
+
+.counter-subtext {
+    font-size: 0.82rem;
+    color: var(--text-secondary);
+    margin-top: 0.35rem;
+}
+
+.action-container {
+    width: 100%;
+    max-width: 360px;
+}
+
+.action-button {
+    display: inline-block;
+    width: 100%;
+    min-height: 46px;
+    padding: 0.75rem 1.25rem;
+    font-family: var(--font-heading);
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--text-light);
+    background-color: var(--primary-color);
+    border: 1.5px solid var(--primary-color);
+    border-radius: 4px;
+    text-decoration: none;
+    text-align: center;
+    transition: background-color 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+    box-shadow: var(--shadow-btn);
+}
+
+.action-button:hover {
+    background-color: var(--primary-hover);
+    border-color: var(--primary-hover);
+}
+
+/* Footer */
+footer {
+    background-color: var(--primary-color);
+    color: var(--text-light);
+    text-align: center;
+    padding: 1.25rem 1rem;
+    margin-top: auto;
+}
+
+footer p {
+    margin: 0.35rem 0;
+    font-size: 0.95rem;
+}
+
+/* Accessibility: Screen Reader Only Class */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+/* Responsive Media Queries */
+@media screen and (min-width: 600px) {
+    main {
+        padding: 2.5rem 1.5rem 3.5rem;
+    }
+
+    .form-card {
+        border-radius: 10px;
+    }
+
+    .form-header {
+        padding: 1.25rem 1.5rem;
+    }
+
+    .form-header h1 {
+        font-size: 1.75rem;
+    }
+
+    .review-form {
+        padding: 2rem 2rem 1.75rem;
+    }
+
+    .form-group {
+        margin-bottom: 1.4rem;
+    }
+}

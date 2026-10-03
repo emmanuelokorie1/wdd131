@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Review Confirmation | WDD 131</title>
+    <meta name="description" content="Confirmation page for the Product Review Form submission in WDD 131 by Okorie Emmanuel. Features submission count tracking using localStorage.">
+    <meta name="author" content="Okorie Emmanuel">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/form.css">
+    <script src="scripts/review.js" defer></script>
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <span class="site-tag">WDD 131 Assignment</span>
+        </div>
+    </header>
+
+    <main>
+        <div class="form-card confirmation-card">
+            <div class="form-header">
+                <h1>Review Confirmation</h1>
+            </div>
+
+            <div class="confirmation-content">
+                <div class="success-icon" aria-hidden="true">&#10004;</div>
+                <h2>Thank You for Your Feedback!</h2>
+                <p class="confirmation-message">Your product review has been submitted successfully and recorded.</p>
+                
+                <div class="counter-container">
+                    <p class="counter-label">Total Reviews Completed:</p>
+                    <div class="counter-display">
+                        <span id="review-count" class="counter-number">0</span>
+                    </div>
+                    <p class="counter-subtext">Tracked automatically using browser local storage.</p>
+                </div>
+
+                <div class="action-container">
+                    <a href="form.html" class="action-button">Submit Another Review</a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy;<span id="currentyear"></span> 🌸 Okorie Emmanuel 🌸 Lagos, Nigeria</p>
+        <p id="lastModified"></p>
+    </footer>
+</body>
+</html>
