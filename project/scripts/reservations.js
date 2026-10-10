@@ -168,33 +168,19 @@ function displayConfirmationCard(booking) {
     const banner = document.getElementById("confirmation-banner");
     if (!banner) return;
 
-    const amenitiesListHtml = booking.amenities.length > 0
-        ? booking.amenities.map((item) => `<li>${item}</li>`).join("")
-        : `<li>Standard high-speed Wi-Fi and power backup included</li>`;
-
     banner.innerHTML = `
-        <div class="confirmation-header">
-            <span class="confirmation-icon" aria-hidden="true">&#9989;</span>
-            <div>
-                <h3>Reservation Confirmed!</h3>
-                <p>Thank you, <strong>${booking.fullName}</strong>. Your sanctuary space has been reserved.</p>
-            </div>
+        <h3 style="color: #1B4332; margin-bottom: 0.5rem;">Reservation Confirmed</h3>
+        <p style="margin-bottom: 1rem;">Thank you, <strong>${booking.fullName}</strong>. Your reservation reference is <strong>${booking.code}</strong>.</p>
+        <div style="background: #ffffff; border: 1px solid #c7ddcb; border-radius: 6px; padding: 1rem; font-size: 0.92rem;">
+            <p style="margin-bottom: 0.35rem;"><strong>Space:</strong> ${booking.spaceType}</p>
+            <p style="margin-bottom: 0.35rem;"><strong>Date &amp; Time:</strong> ${booking.date} (${booking.timeSlot})</p>
+            <p style="margin-bottom: 0.35rem;"><strong>Party Size:</strong> ${booking.guests} guest(s)</p>
+            <p style="margin-bottom: 0.35rem;"><strong>Amenities:</strong> ${booking.amenities.length > 0 ? booking.amenities.join(", ") : "Standard seating and Wi-Fi"}</p>
+            <p style="margin-bottom: 0;"><strong>Contact:</strong> ${booking.email} &bull; ${booking.phone}</p>
         </div>
-
-        <div class="confirmation-details-box">
-            <p><strong>Booking Reference:</strong> <span class="booking-code-tag">${booking.code}</span></p>
-            <p><strong>Reserved Space:</strong> ${booking.spaceType}</p>
-            <p><strong>Date &amp; Time Slot:</strong> ${booking.date} &bull; ${booking.timeSlot}</p>
-            <p><strong>Party Size:</strong> ${booking.guests} guest(s)</p>
-            <p><strong>Included Amenities:</strong></p>
-            <ul>
-                ${amenitiesListHtml}
-            </ul>
-            <p><strong>Contact Email:</strong> ${booking.email} &bull; <strong>Phone:</strong> ${booking.phone}</p>
-            <p style="margin-top: 0.75rem; font-size: 0.85rem; color: #555555;">
-                A copy of this confirmation has been archived in your browser storage. Please show your reference code upon arrival at Plot 14, Admiralty Way, Lekki Phase 1.
-            </p>
-        </div>
+        <p style="font-size: 0.85rem; color: #555; margin-top: 0.75rem; margin-bottom: 0;">
+            A confirmation has been saved to your browser. Please mention reference <strong>${booking.code}</strong> upon arrival at Plot 14, Admiralty Way.
+        </p>
     `;
 
     banner.style.display = "block";
@@ -227,8 +213,8 @@ function renderBookingHistory() {
 
     if (bookings.length === 0) {
         historyContainer.innerHTML = `
-            <p style="color: #666; font-size: 0.9rem; font-style: italic;">
-                No active bookings recorded in this browser. Complete the form above to reserve your spot!
+            <p style="color: #666; font-size: 0.88rem; font-style: italic; margin-bottom: 0;">
+                No bookings saved in this browser yet. Fill out the form to reserve a spot.
             </p>
         `;
         return;
@@ -236,16 +222,16 @@ function renderBookingHistory() {
 
     const itemsHtml = bookings.map((b) => {
         return `
-            <div class="booking-item-card">
-                <div class="booking-item-title">
+            <div class="history-entry">
+                <div style="display: flex; justify-content: space-between; font-weight: 600; color: #1B4332; margin-bottom: 0.2rem;">
                     <span>${b.spaceType}</span>
-                    <span class="booking-code-tag" style="font-size: 0.85rem;">${b.code}</span>
+                    <span style="font-family: monospace; font-size: 0.85rem;">${b.code}</span>
                 </div>
-                <p style="font-size: 0.88rem; margin-bottom: 0.25rem;">
-                    <strong>Date:</strong> ${b.date} &bull; <strong>Slot:</strong> ${b.timeSlot} &bull; <strong>Guests:</strong> ${b.guests}
+                <p style="margin-bottom: 0.2rem; font-size: 0.86rem; color: #444;">
+                    ${b.date} &bull; ${b.timeSlot} &bull; ${b.guests} guest(s)
                 </p>
-                <p style="font-size: 0.8rem; color: #666; margin-bottom: 0;">
-                    Booked by: ${b.fullName} (${b.email}) &bull; Booked on: ${b.created}
+                <p style="margin-bottom: 0; font-size: 0.78rem; color: #777;">
+                    ${b.fullName} &bull; ${b.created}
                 </p>
             </div>
         `;

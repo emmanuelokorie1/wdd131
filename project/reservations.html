@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Workspace &amp; Table Reservations | Zen Café Lagos</title>
-    <meta name="description" content="Reserve a hot desk, sound-dampened call booth, collaboration table, or coffee tasting lounge at Zen Café Lagos in Lekki Phase 1 with fiber Wi-Fi and solar power.">
+    <title>Reservations | Zen Café Lagos</title>
+    <meta name="description" content="Reserve a co-working desk, private phone booth, or team table at Zen Café Lagos in Lekki Phase 1 with solar power and fiber Wi-Fi.">
     <meta name="author" content="Okorie Emmanuel">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -20,7 +20,7 @@
     <header>
         <div class="header-container">
             <a href="index.html" class="brand-wrapper" aria-label="Zen Café Lagos Home">
-                <img src="images/logo-icon.svg" alt="Zen Café Lagos Icon" class="brand-icon" width="40" height="40">
+                <img src="images/logo-icon.svg" alt="Zen Café Logo Icon" class="brand-icon" width="38" height="38">
                 <div class="brand-text">
                     <span class="brand-title">Zen Café Lagos</span>
                     <span class="brand-tagline">Eat Fresh &bull; Live Zen</span>
@@ -39,167 +39,153 @@
                     <li><a href="menu.html" class="nav-link">Menu &amp; Specials</a></li>
                     <li><a href="reservations.html" class="nav-link active">Reservations</a></li>
                     <li><a href="siteplan.html" class="nav-link">Site Plan</a></li>
-                    <li class="nav-cta-item"><a href="reservations.html" class="btn-nav-reserve">Book a Spot</a></li>
+                    <li><a href="reservations.html" class="btn-nav-reserve">Book a Spot</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
     <main id="main-content">
-        <section class="section-header-row" style="margin-top: 1rem;">
+        <div class="section-title-area" style="margin-top: 1rem;">
             <h1>Workspace &amp; Table Reservations</h1>
             <p class="section-subtitle">
-                Reserve your productive sanctuary in Lekki Phase 1. Enjoy guaranteed power backup, high-speed fiber internet, and fresh whole nourishment.
+                Reserve a quiet desk, a private call booth, or a team collaboration table in Lekki Phase 1.
             </p>
+        </div>
+
+        <!-- Dynamic Confirmation Notice -->
+        <section id="confirmation-banner" class="confirmation-card" aria-live="polite" aria-label="Reservation Confirmation">
+            <!-- Populated dynamically via reservations.js -->
         </section>
 
-        <!-- Dynamic Booking Confirmation Banner (revealed on form submission) -->
-        <section id="confirmation-banner" class="confirmation-container" aria-live="polite" aria-label="Booking Confirmation Notice">
-            <!-- Populated via reservations.js -->
-        </section>
-
-        <div class="reservation-layout">
-            <!-- Standards-Based HTML Form -->
-            <section class="booking-form-card" aria-labelledby="form-heading">
-                <h2 id="form-heading">Reserve Your Spot</h2>
-                <p class="form-instructions">Fields marked with an asterisk (<span class="required-star">*</span>) are mandatory.</p>
+        <div class="reservation-columns">
+            <!-- Standards-Based Reservation Form -->
+            <section class="form-wrapper" aria-labelledby="form-heading">
+                <h2 id="form-heading">Book Your Space</h2>
+                <p style="font-size: 0.9rem; color: #666; margin-bottom: 1.5rem;">
+                    Please fill out the details below. Required fields are marked with an asterisk (*).
+                </p>
 
                 <form id="reservation-form" method="post" action="#">
-                    <!-- Fieldset 1: Guest Contact Information -->
+                    <!-- Fieldset 1: Contact Information -->
                     <fieldset>
                         <legend>1. Contact Information</legend>
-                        
-                        <div class="form-group">
-                            <label for="res-name">Full Name <span class="required-star">*</span></label>
-                            <input type="text" id="res-name" name="name" class="form-control" placeholder="e.g. Adeola Balogun" required autocomplete="name">
+                        <div class="input-group">
+                            <label for="res-name">Full Name *</label>
+                            <input type="text" id="res-name" name="name" class="input-control" placeholder="Adeola Balogun" required autocomplete="name">
                         </div>
 
-                        <div class="form-row">
-                            <div class="form-group">
-                                <label for="res-email">Email Address <span class="required-star">*</span></label>
-                                <input type="email" id="res-email" name="email" class="form-control" placeholder="adeola@example.com" required autocomplete="email">
+                        <div class="input-two-cols">
+                            <div class="input-group">
+                                <label for="res-email">Email Address *</label>
+                                <input type="email" id="res-email" name="email" class="input-control" placeholder="adeola@example.com" required autocomplete="email">
                             </div>
 
-                            <div class="form-group">
-                                <label for="res-phone">Phone Number <span class="required-star">*</span></label>
-                                <input type="tel" id="res-phone" name="phone" class="form-control" placeholder="+234 814 000 0000" pattern="[0-9+ \-]{8,20}" required autocomplete="tel">
-                                <span class="form-hint">Format: +234 followed by your mobile number</span>
+                            <div class="input-group">
+                                <label for="res-phone">Phone Number *</label>
+                                <input type="tel" id="res-phone" name="phone" class="input-control" placeholder="+234 814 000 0000" pattern="[0-9+ \-]{8,20}" required autocomplete="tel">
                             </div>
                         </div>
                     </fieldset>
 
-                    <!-- Fieldset 2: Space Type & Scheduling -->
+                    <!-- Fieldset 2: Space and Time -->
                     <fieldset>
                         <legend>2. Reservation Details</legend>
-
-                        <div class="form-group">
-                            <label for="res-space">Space Selection <span class="required-star">*</span></label>
-                            <select id="res-space" name="space" class="form-control" required>
-                                <option value="" disabled selected>Choose a workspace or table type...</option>
-                                <option value="hot-desk">Ergonomic Hot Desk (Co-Working Hall) &bull; ₦3,500/day</option>
-                                <option value="quiet-booth">Private Sound-Dampened Call Booth &bull; ₦5,000/2hrs</option>
-                                <option value="meeting-table">Team Collaboration Table (4-6 persons) &bull; ₦12,000/session</option>
-                                <option value="tasting-table">Artisan Coffee Tasting Lounge Table &bull; Free with order</option>
-                                <option value="garden-patio">Coastal Garden Patio Table &bull; Free with order</option>
+                        <div class="input-group">
+                            <label for="res-space">Space Type *</label>
+                            <select id="res-space" name="space" class="input-control" required>
+                                <option value="" disabled selected>Select workspace or table...</option>
+                                <option value="hot-desk">Hot Desk &bull; ₦3,500 / day</option>
+                                <option value="quiet-booth">Private Call Booth &bull; ₦5,000 / 2 hours</option>
+                                <option value="meeting-table">Team Table (4-6 people) &bull; ₦12,000 / session</option>
+                                <option value="cafe-table">Regular Café Table &bull; Free with food order</option>
                             </select>
                         </div>
 
-                        <div class="form-row">
-                            <div class="form-group">
-                                <label for="res-date">Reservation Date <span class="required-star">*</span></label>
-                                <input type="date" id="res-date" name="date" class="form-control" required>
+                        <div class="input-two-cols">
+                            <div class="input-group">
+                                <label for="res-date">Date *</label>
+                                <input type="date" id="res-date" name="date" class="input-control" required>
                             </div>
 
-                            <div class="form-group">
-                                <label for="res-timeslot">Time Slot <span class="required-star">*</span></label>
-                                <select id="res-timeslot" name="timeslot" class="form-control" required>
+                            <div class="input-group">
+                                <label for="res-timeslot">Time Slot *</label>
+                                <select id="res-timeslot" name="timeslot" class="input-control" required>
                                     <option value="" disabled selected>Select session window...</option>
-                                    <option value="Morning Focus (08:00 AM - 12:00 PM)">Morning Focus (08:00 AM &ndash; 12:00 PM)</option>
-                                    <option value="Afternoon Sprint (12:00 PM - 05:00 PM)">Afternoon Sprint (12:00 PM &ndash; 05:00 PM)</option>
-                                    <option value="Full Day Sanctuary (08:00 AM - 08:00 PM)">Full Day Sanctuary (08:00 AM &ndash; 08:00 PM)</option>
-                                    <option value="Sunset Lounge (05:00 PM - 08:00 PM)">Sunset Lounge (05:00 PM &ndash; 08:00 PM)</option>
+                                    <option value="Morning (8:00 AM - 12:00 PM)">Morning (8:00 AM &ndash; 12:00 PM)</option>
+                                    <option value="Afternoon (12:00 PM - 5:00 PM)">Afternoon (12:00 PM &ndash; 5:00 PM)</option>
+                                    <option value="Full Day (8:00 AM - 8:00 PM)">Full Day (8:00 AM &ndash; 8:00 PM)</option>
+                                    <option value="Evening (5:00 PM - 8:00 PM)">Evening (5:00 PM &ndash; 8:00 PM)</option>
                                 </select>
                             </div>
                         </div>
 
-                        <div class="form-group">
-                            <label for="res-guests">Number of Guests / Party Size <span class="required-star">*</span></label>
-                            <input type="number" id="res-guests" name="guests" class="form-control" min="1" max="10" value="1" required>
+                        <div class="input-group">
+                            <label for="res-guests">Number of Guests *</label>
+                            <input type="number" id="res-guests" name="guests" class="input-control" min="1" max="10" value="1" required>
                         </div>
                     </fieldset>
 
-                    <!-- Fieldset 3: Optional Productivity Amenities -->
+                    <!-- Fieldset 3: Optional Add-ons -->
                     <fieldset>
-                        <legend>3. Optional Add-On Amenities</legend>
-                        <p class="form-hint" style="margin-bottom: 0.5rem;">Select any complimentary or pre-ordered perks:</p>
-                        
-                        <div class="amenities-group">
-                            <label class="amenity-checkbox">
-                                <input type="checkbox" name="amenities" value="Dedicated Redundant Starlink Wi-Fi Channel">
-                                <span>Dedicated Starlink Satellite Wi-Fi Channel</span>
+                        <legend>3. Optional Add-ons</legend>
+                        <div class="checkboxes-list">
+                            <label>
+                                <input type="checkbox" name="amenities" value="External 24-inch Monitor">
+                                <span>External 24-inch Monitor (HDMI / USB-C)</span>
                             </label>
-
-                            <label class="amenity-checkbox">
-                                <input type="checkbox" name="amenities" value="Pre-brewed Ethiopian Cold Brew Carafe">
-                                <span>Pre-brewed Ethiopian Cold Brew Carafe</span>
+                            <label>
+                                <input type="checkbox" name="amenities" value="Cold Brew Carafe on Arrival">
+                                <span>Cold Brew Carafe on Arrival</span>
                             </label>
-
-                            <label class="amenity-checkbox">
-                                <input type="checkbox" name="amenities" value="Dual External Monitor Setup (HDMI/USB-C)">
-                                <span>Dual External Monitor Setup (HDMI/USB-C)</span>
-                            </label>
-
-                            <label class="amenity-checkbox">
-                                <input type="checkbox" name="amenities" value="Chef Prepared Acai Bowl at 11:00 AM">
-                                <span>Chef-Prepared Acai Bowl at 11:00 AM</span>
+                            <label>
+                                <input type="checkbox" name="amenities" value="Quiet Window Seat Preference">
+                                <span>Quiet Window Seat Preference</span>
                             </label>
                         </div>
                     </fieldset>
 
-                    <!-- Fieldset 4: Special Requests -->
+                    <!-- Fieldset 4: Notes and Agreement -->
                     <fieldset>
-                        <legend>4. Special Requests &amp; Notes</legend>
-                        
-                        <div class="form-group">
-                            <label for="res-notes">Dietary Needs or Workspace Preferences</label>
-                            <textarea id="res-notes" name="notes" class="form-control" placeholder="Specify any dietary restrictions, accessibility requirements, or quiet corner preferences..."></textarea>
+                        <legend>4. Notes &amp; Policy</legend>
+                        <div class="input-group">
+                            <label for="res-notes">Special Requests</label>
+                            <textarea id="res-notes" name="notes" class="input-control" rows="3" placeholder="Any dietary restrictions or seating preferences..."></textarea>
                         </div>
 
-                        <div class="terms-row">
-                            <label class="amenity-checkbox">
-                                <input type="checkbox" id="res-terms" name="terms" required>
-                                <span>I agree to the Zen Café quiet zone policy and understand that seats are held for 20 minutes past reservation time. <span class="required-star">*</span></span>
+                        <div style="margin-top: 0.75rem;">
+                            <label style="display: flex; align-items: flex-start; gap: 0.5rem; font-size: 0.88rem; cursor: pointer;">
+                                <input type="checkbox" id="res-terms" name="terms" required style="margin-top: 0.2rem;">
+                                <span>I agree to the quiet workspace policy and understand reservations are held for 20 minutes past arrival time. *</span>
                             </label>
                         </div>
                     </fieldset>
 
-                    <div class="submit-btn-row">
-                        <button type="submit" class="btn btn-secondary submit-btn">Confirm Reservation &rarr;</button>
+                    <div style="margin-top: 1.5rem;">
+                        <button type="submit" class="btn btn-secondary" style="width: 100%;">Confirm Reservation</button>
                     </div>
                 </form>
             </section>
 
-            <!-- Sidebar: Space Options Guide & User Booking History (localStorage) -->
-            <aside aria-label="Reservation Guidelines and History">
-                <!-- User's Saved Bookings History (from localStorage) -->
-                <div class="saved-bookings-card" style="margin-bottom: 2rem;">
-                    <div class="saved-bookings-header">
-                        <h3>Your Recent Bookings (<span id="history-count">0</span>)</h3>
-                        <button type="button" id="btn-clear-history" class="btn-clear-history">Clear History</button>
+            <!-- Sidebar: Recent Bookings (localStorage) -->
+            <aside aria-label="Your Bookings and Workspace Amenities">
+                <div class="history-card" style="margin-bottom: 1.75rem;">
+                    <div class="history-top">
+                        <h3 style="margin-bottom: 0;">Your Saved Bookings (<span id="history-count">0</span>)</h3>
+                        <button type="button" id="btn-clear-history" style="background: none; border: 1px solid #d1d5db; font-size: 0.8rem; padding: 0.25rem 0.5rem; border-radius: 4px; cursor: pointer;">Clear</button>
                     </div>
                     <div id="bookings-history-list" aria-live="polite">
                         <!-- Populated dynamically via reservations.js -->
                     </div>
                 </div>
 
-                <!-- Sanctuary Perks Card -->
-                <div class="saved-bookings-card">
-                    <h3 style="margin-bottom: 0.75rem;">Sanctuary Amenities</h3>
-                    <ul style="padding-left: 1.25rem; font-size: 0.9rem; color: #444; display: flex; flex-direction: column; gap: 0.5rem;">
-                        <li><strong>Uninterrupted Power:</strong> Solar + Inverter battery bank with automatic switchover.</li>
-                        <li><strong>High-Speed Fiber:</strong> Dual internet service providers with 200Mbps bandwidth.</li>
-                        <li><strong>Artisan Refuels:</strong> 10% discount on all artisan pour-overs during co-working sessions.</li>
-                        <li><strong>Secure Parking:</strong> Gated facility with dedicated security guards on Admiralty Way.</li>
+                <div class="history-card">
+                    <h3>Workspace Amenities</h3>
+                    <ul style="padding-left: 1.25rem; font-size: 0.9rem; color: #444; display: flex; flex-direction: column; gap: 0.5rem; margin-top: 0.75rem;">
+                        <li><strong>Unbroken Power:</strong> Solar inverter system keeps laptops running all day.</li>
+                        <li><strong>High-Speed Wi-Fi:</strong> 200Mbps dual-provider fiber internet.</li>
+                        <li><strong>Coffee &amp; Food:</strong> Full café menu available delivered to your desk.</li>
+                        <li><strong>Parking:</strong> Free secure gated parking on Admiralty Way.</li>
                     </ul>
                 </div>
             </aside>
@@ -207,34 +193,33 @@
     </main>
 
     <footer>
-        <div class="footer-container">
+        <div class="footer-inner">
             <div class="footer-col">
                 <h3>Zen Café Lagos</h3>
-                <p>Artisanal coffee roastery, organic whole-food kitchen, and quiet co-working sanctuary situated in Lekki Phase 1, Lagos.</p>
-                <p>Built with modern semantic HTML, contemporary CSS, and responsive JavaScript for WDD 131.</p>
+                <p>Coffee roastery, fresh food kitchen, and quiet workspace located in Lekki Phase 1, Lagos.</p>
+                <p>WDD 131 Dynamic Web Fundamentals course project.</p>
             </div>
 
             <div class="footer-col">
-                <h3>Quick Links</h3>
-                <ul class="footer-links">
+                <h3>Navigation</h3>
+                <ul>
                     <li><a href="index.html">Home</a></li>
                     <li><a href="menu.html">Menu &amp; Specials</a></li>
-                    <li><a href="reservations.html">Workspace &amp; Reservations</a></li>
+                    <li><a href="reservations.html">Reservations</a></li>
                     <li><a href="siteplan.html">Project Site Plan</a></li>
                     <li><a href="references.html">References &amp; Citations</a></li>
                 </ul>
             </div>
 
             <div class="footer-col">
-                <h3>Contact &amp; Location</h3>
+                <h3>Contact</h3>
                 <p>Plot 14, Admiralty Way, Lekki Phase 1</p>
                 <p>Lagos State, Nigeria</p>
-                <p>Phone: +234 (0) 814 555 9362</p>
-                <p>Email: contact@zencafelagos.com</p>
+                <p>+234 (0) 814 555 9362</p>
             </div>
         </div>
 
-        <div class="footer-bottom">
+        <div class="footer-meta">
             <p>&copy;<span id="currentyear"></span> 🌸 Okorie Emmanuel 🌸 Lagos, Nigeria</p>
             <p id="lastModified"></p>
         </div>

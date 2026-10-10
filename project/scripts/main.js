@@ -102,15 +102,11 @@ function initCafeStatus() {
         }
     }
 
-    // Template literals used exclusively for DOM modification
-    const badgeClass = isOpen ? `status-open` : `status-closed`;
-    const labelText = isOpen ? `Open Now` : `Currently Closed`;
+    // Clean, human hours message using template literals
+    const statusWord = isOpen ? `We're Open Today` : `Currently Closed`;
 
     statusContainer.innerHTML = `
-        <span class="status-badge ${badgeClass}">
-            <span class="pulse-dot"></span>
-            ${labelText}
-        </span>
-        <span class="status-hours-text">${nextEvent} &bull; Admiralty Way, Lekki Phase 1</span>
+        <span><strong>${statusWord}</strong> &bull; ${nextEvent}</span>
+        <span>Plot 14, Admiralty Way, Lekki Phase 1</span>
     `;
 }

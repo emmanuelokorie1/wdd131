@@ -1,135 +1,135 @@
 /**
- * Zen Café Lagos - Interactive Menu Script
+ * Zen Café Lagos - Menu & Specials Script
  * WDD 131 - Dynamic Web Fundamentals
- * Demonstrates: Arrays, array methods (filter, map, forEach), objects,
- * conditional branching, DOM manipulation, exclusive template literals, and localStorage.
+ * Demonstrates: Objects, arrays, array methods (.filter, .map, .forEach, .includes),
+ * conditional branching, DOM interaction, exclusive template literals, and localStorage.
  */
 
-// Array of Menu Item Objects
+// Array of authentic, handcrafted menu items
 const menuItems = [
     {
         id: "cf-1",
         name: "Taraba Highlands Pour-Over",
         category: "coffee",
-        price: 4500,
-        description: "Single-origin washed Arabica grown on the Mambilla Plateau of Taraba State, Nigeria. Notes of jasmine, bright citrus, and wild honey.",
+        price: 3500,
+        description: "Single-origin washed Arabica grown on the Mambilla Plateau in Taraba State, Nigeria. Clean and bright with citrus and honey notes.",
         image: "images/artisan-coffee.jpg",
-        dietary: ["vegan", "organic", "signature"],
-        origin: "Taraba Highlands, Nigeria"
+        dietary: ["vegan", "organic"],
+        origin: "Taraba State, Nigeria"
     },
     {
         id: "cf-2",
         name: "Ethiopian Yirgacheffe Cold Brew",
         category: "coffee",
-        price: 4800,
-        description: "Slow-steeped for 18 hours in cold filtered water. Smooth, velvety mouthfeel with delicate bergamot and blueberry undertones.",
+        price: 4000,
+        description: "Slow-steeped for 18 hours in cold filtered water. Smooth, low-acidity cold coffee with delicate berry undertones.",
         image: "images/artisan-coffee.jpg",
         dietary: ["vegan", "organic"],
         origin: "Yirgacheffe, Ethiopia"
     },
     {
         id: "cf-3",
-        name: "Lekki Spiced Cardamom Flat White",
+        name: "Classic Flat White",
         category: "coffee",
-        price: 5200,
-        description: "Double espresso pulled through crushed green cardamom pods, steamed with velvety oat milk and a hint of raw agave nectar.",
+        price: 3800,
+        description: "Double shot of house espresso blended with silky steamed milk or oat milk, finished with microfoam.",
         image: "images/artisan-coffee.jpg",
-        dietary: ["vegan", "signature"],
+        dietary: ["organic"],
         origin: "East Africa House Blend"
     },
     {
         id: "sm-1",
-        name: "Amazonian Acai & Baobab Bowl",
+        name: "Classic Acai Berry Bowl",
         category: "smoothie",
-        price: 6500,
-        description: "Pure wild acai blended with organic Nigerian baobab fruit and frozen bananas. Topped with dragon fruit, chia seeds, and toasted coconut flakes.",
+        price: 5500,
+        description: "Wild organic acai blended with frozen bananas and house-made tigernut milk. Topped with fresh strawberries, kiwi, and coconut flakes.",
         image: "images/smoothie-bowl.jpg",
-        dietary: ["vegan", "gf", "organic", "signature"],
-        origin: "Organic Superfood Blend"
+        dietary: ["vegan", "gf", "organic"],
+        origin: "Superfood Kitchen"
     },
     {
         id: "sm-2",
-        name: "Tropical Mango & Tigernut Bliss",
+        name: "Tropical Benue Mango Bowl",
         category: "smoothie",
-        price: 5900,
-        description: "Sweet Benue mangoes blended with homemade sweet tigernut (kunu aya) milk and spinach, crowned with fresh kiwi slices and hemp hearts.",
+        price: 4800,
+        description: "Sweet Benue mangoes blended with pineapple and coconut water. Crowned with banana slices, chia seeds, and crunchy granola.",
         image: "images/smoothie-bowl.jpg",
-        dietary: ["vegan", "gf", "keto"],
-        origin: "Benue State & Lagos Local"
+        dietary: ["vegan", "gf"],
+        origin: "Benue State Fresh"
     },
     {
         id: "sm-3",
-        name: "Blue Spirulina Ocean Glow",
+        name: "Green Spirulina Detox Bowl",
         category: "smoothie",
-        price: 6800,
-        description: "Marine blue spirulina whipped with coconut yogurt, frozen pineapple, and lime juice. Finished with cacao nibs and organic blueberries.",
+        price: 5200,
+        description: "Organic spinach, banana, and green spirulina whipped with almond milk. Topped with fresh blueberries and hemp seeds.",
         image: "images/smoothie-bowl.jpg",
         dietary: ["vegan", "gf", "organic"],
-        origin: "Coastal Nutrient Blend"
+        origin: "Organic Greens"
     },
     {
         id: "bk-1",
-        name: "Artisan Sourdough Avocado Toast",
+        name: "Sourdough Avocado Toast",
         category: "bakery",
-        price: 5500,
-        description: "Locally fermented wild sourdough toast layered with crushed Hass avocado, poached organic farm egg, watermelon radish, and microgreens.",
+        price: 4500,
+        description: "Toasted wild sourdough slice with fresh crushed Hass avocado, poached farm egg, olive oil, and sea salt flakes.",
         image: "images/artisan-bakery.jpg",
-        dietary: ["organic", "signature"],
-        origin: "In-House Sourdough Bakery"
+        dietary: ["organic"],
+        origin: "House Sourdough Bakery"
     },
     {
         id: "bk-2",
-        name: "Toasted Almond Croissant",
+        name: "Flaky Almond Croissant",
         category: "bakery",
-        price: 4200,
-        description: "Flaky all-butter laminated French pastry filled with rich almond frangipane cream, dusted with powdered organic cane sugar.",
+        price: 3200,
+        description: "Traditional butter croissant baked fresh each morning, filled with sweet almond frangipane cream and sliced almonds.",
         image: "images/artisan-bakery.jpg",
         dietary: ["organic"],
-        origin: "French Craft Artisanal"
+        origin: "In-House Pastry Kitchen"
     },
     {
         id: "bk-3",
-        name: "Grain-Free Banana Walnut Bread",
+        name: "Spiced Banana Walnut Bread",
         category: "bakery",
-        price: 3800,
-        description: "Almond flour bread naturally sweetened with ripe plantains and dates, spiced with Nigerian nutmeg and toasted walnuts.",
+        price: 2800,
+        description: "Moist banana bread naturally sweetened and spiced with Nigerian nutmeg and toasted walnuts. Served warm with butter.",
         image: "images/artisan-bakery.jpg",
-        dietary: ["gf", "keto"],
-        origin: "Grain-Free Kitchen"
+        dietary: ["organic"],
+        origin: "Daily Bakes"
     },
     {
         id: "jc-1",
-        name: "Zobo Ruby Hibiscus Elixir",
+        name: "Hibiscus Mint Iced Tea (Zobo)",
         category: "juice",
-        price: 3600,
-        description: "Sun-dried organic Nigerian hibiscus calyces cold-infused with ginger root, cloves, sweet oranges, and pure raw mountain honey.",
+        price: 2500,
+        description: "Sun-dried organic Nigerian hibiscus calyces brewed with fresh ginger, mint leaves, sweet orange slices, and raw honey.",
         image: "images/cold-drinks.jpg",
-        dietary: ["vegan", "gf", "organic", "signature"],
-        origin: "Kano & Kaduna Organic Farms"
+        dietary: ["vegan", "gf", "organic"],
+        origin: "Northern Nigeria Organic"
     },
     {
         id: "jc-2",
-        name: "Golden Turmeric Ginger Tonic",
+        name: "Cold-Pressed Green Glow",
         category: "juice",
-        price: 3900,
-        description: "Cold-pressed fresh yellow turmeric, spicy ginger root, Valencia orange juice, black pepper extract, and coconut water.",
+        price: 3200,
+        description: "Freshly pressed crisp cucumber, celery, local spinach, green Granny Smith apple, and a squeeze of lime.",
         image: "images/cold-drinks.jpg",
-        dietary: ["vegan", "gf", "organic"],
-        origin: "Fresh Nigerian Cold-Press"
+        dietary: ["vegan", "gf"],
+        origin: "Fresh Cold-Press"
     },
     {
         id: "jc-3",
-        name: "Green Sanctuary Detox Cold-Press",
+        name: "Fresh Orange Ginger Tonic",
         category: "juice",
-        price: 4200,
-        description: "Crisp cucumber, celery, local ugwu spinach, green Granny Smith apples, mint leaves, and fresh lime juice.",
+        price: 3000,
+        description: "100% pure Valencia oranges, freshly grated ginger root, and turmeric with a dash of raw honey.",
         image: "images/cold-drinks.jpg",
-        dietary: ["vegan", "gf", "keto"],
-        origin: "Lekki Urban Farm Fresh"
+        dietary: ["vegan", "gf", "organic"],
+        origin: "Citrus Grove Fresh"
     }
 ];
 
-// State Management
+// State variables
 let currentCategory = "all";
 let searchQuery = "";
 let selectedDietary = [];
@@ -142,8 +142,7 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 /**
- * Retrieves stored favorite IDs from localStorage.
- * Demonstrates conditional branching and error fallback.
+ * Retrieves saved favorite IDs from localStorage.
  * @returns {Array<string>}
  */
 function getStoredFavorites() {
@@ -159,14 +158,14 @@ function getStoredFavorites() {
 }
 
 /**
- * Saves favorites array to localStorage.
+ * Saves favorite IDs array to localStorage.
  * @param {Array<string>} favorites
  */
 function saveFavorites(favorites) {
     try {
         localStorage.setItem(STORAGE_FAVORITES_KEY, JSON.stringify(favorites));
     } catch (e) {
-        console.warn(`Unable to save favorites to localStorage: ${e.message}`);
+        console.warn(`Could not save favorites: ${e.message}`);
     }
 }
 
@@ -179,10 +178,8 @@ function toggleFavorite(itemId) {
     let favorites = getStoredFavorites();
 
     if (favorites.includes(itemId)) {
-        // Remove from favorites using array filter method
         favorites = favorites.filter((id) => id !== itemId);
     } else {
-        // Add to favorites
         favorites.push(itemId);
     }
 
@@ -200,12 +197,11 @@ function updateFavoriteCountBadge() {
     if (!favCountEl) return;
 
     const favorites = getStoredFavorites();
-    const count = favorites.length;
-    favCountEl.textContent = `${count}`;
+    favCountEl.textContent = `${favorites.length}`;
 }
 
 /**
- * Formats a numeric price into Nigerian Naira currency string using template literals.
+ * Formats a number to Nigerian Naira using template literals.
  * @param {number} amount
  * @returns {string}
  */
@@ -214,8 +210,8 @@ function formatNaira(amount) {
 }
 
 /**
- * Renders the menu item cards to the DOM.
- * Uses template literals exclusively for all HTML construction.
+ * Renders menu cards into the DOM.
+ * Uses template literals exclusively.
  * @param {Array<Object>} items
  */
 function renderMenuCards(items) {
@@ -225,15 +221,15 @@ function renderMenuCards(items) {
     if (!container) return;
 
     if (countLabel) {
-        countLabel.textContent = `Showing ${items.length} of ${menuItems.length} handcrafted items`;
+        countLabel.textContent = `Showing ${items.length} of ${menuItems.length} items`;
     }
 
     if (items.length === 0) {
         container.innerHTML = `
-            <div class="empty-menu-message">
-                <h3>No Menu Items Found</h3>
-                <p>We could not find any culinary offerings matching your current filter selections.</p>
-                <button type="button" class="btn btn-outline" id="reset-filters-btn">Reset All Filters</button>
+            <div style="grid-column: 1 / -1; text-align: center; padding: 2.5rem; background: #fff; border: 1px solid #E5E3DE; border-radius: 8px;">
+                <h3 style="margin-bottom: 0.5rem; color: #1B4332;">No Items Found</h3>
+                <p style="color: #666; margin-bottom: 1rem;">No menu items matched your current search or dietary filters.</p>
+                <button type="button" class="btn btn-outline" id="reset-filters-btn">Clear Filters</button>
             </div>
         `;
 
@@ -246,41 +242,36 @@ function renderMenuCards(items) {
 
     const favorites = getStoredFavorites();
 
-    // Map items to HTML card template literals and join
+    // Map each item into clean template literals
     const cardsMarkup = items.map((item) => {
         const isFavorited = favorites.includes(item.id);
         const heartSymbol = isFavorited ? `♥` : `♡`;
-        const favoriteClass = isFavorited ? `btn-favorite favorited` : `btn-favorite`;
+        const favoriteClass = isFavorited ? `btn-fav-heart favorited` : `btn-fav-heart`;
         const favoriteAria = isFavorited ? `Remove ${item.name} from favorites` : `Add ${item.name} to favorites`;
 
-        // Generate dietary tags via map
         const tagsHtml = item.dietary.map((tag) => {
-            const labelMap = {
+            const labels = {
                 vegan: "Vegan",
                 gf: "Gluten-Free",
-                keto: "Keto",
-                organic: "100% Organic",
-                signature: "Chef Signature"
+                organic: "Organic"
             };
-            const labelText = labelMap[tag] || tag;
-            return `<span class="tag-badge tag-${tag}">${labelText}</span>`;
+            const labelText = labels[tag] || tag;
+            return `<span class="tag">${labelText}</span>`;
         }).join("");
 
         return `
-            <article class="menu-card" data-id="${item.id}">
-                <div class="menu-card-img-wrapper">
-                    <img src="${item.image}" alt="${item.name}" loading="lazy" width="400" height="300">
-                    <button type="button" class="${favoriteClass}" aria-label="${favoriteAria}" title="${favoriteAria}" data-item-id="${item.id}">
-                        ${heartSymbol}
-                    </button>
-                </div>
-                <div class="menu-card-body">
-                    <div class="menu-card-header">
-                        <h3>${item.name}</h3>
-                        <span class="menu-price">${formatNaira(item.price)}</span>
+            <article class="food-card" data-id="${item.id}">
+                <img src="${item.image}" alt="${item.name}" loading="lazy" width="400" height="300">
+                <button type="button" class="${favoriteClass}" aria-label="${favoriteAria}" title="${favoriteAria}" data-item-id="${item.id}">
+                    ${heartSymbol}
+                </button>
+                <div class="food-body">
+                    <div class="food-header">
+                        <h3 class="food-title">${item.name}</h3>
+                        <span class="food-price">${formatNaira(item.price)}</span>
                     </div>
-                    <p class="menu-card-desc">${item.description}</p>
-                    <div class="menu-tags">
+                    <p class="food-desc">${item.description}</p>
+                    <div class="food-tags">
                         ${tagsHtml}
                     </div>
                 </div>
@@ -290,8 +281,8 @@ function renderMenuCards(items) {
 
     container.innerHTML = cardsMarkup;
 
-    // Attach event listeners to favorite buttons
-    const favoriteButtons = container.querySelectorAll(".btn-favorite");
+    // Attach click listeners to favorite heart buttons
+    const favoriteButtons = container.querySelectorAll(".btn-fav-heart");
     favoriteButtons.forEach((btn) => {
         btn.addEventListener("click", (e) => {
             e.preventDefault();
@@ -304,13 +295,13 @@ function renderMenuCards(items) {
 }
 
 /**
- * Filters the menu item array based on category, search input, and dietary preferences.
- * Demonstrates array methods (.filter, .includes, .toLowerCase, .some).
+ * Filters the menu item array based on category, search query, and dietary checkboxes.
+ * Demonstrates array methods (.filter, .includes, .toLowerCase, .every).
  */
 function filterAndRenderMenu() {
     let filtered = menuItems;
 
-    // Filter by Category
+    // Category Filter
     if (currentCategory === "favorites") {
         const favorites = getStoredFavorites();
         filtered = filtered.filter((item) => favorites.includes(item.id));
@@ -318,21 +309,21 @@ function filterAndRenderMenu() {
         filtered = filtered.filter((item) => item.category === currentCategory);
     }
 
-    // Filter by Search Query
+    // Search Query Filter
     if (searchQuery.trim() !== "") {
         const query = searchQuery.trim().toLowerCase();
         filtered = filtered.filter((item) => {
-            const matchesName = item.name.toLowerCase().includes(query);
-            const matchesDesc = item.description.toLowerCase().includes(query);
-            const matchesOrigin = item.origin.toLowerCase().includes(query);
-            return matchesName || matchesDesc || matchesOrigin;
+            const nameMatch = item.name.toLowerCase().includes(query);
+            const descMatch = item.description.toLowerCase().includes(query);
+            const originMatch = item.origin.toLowerCase().includes(query);
+            return nameMatch || descMatch || originMatch;
         });
     }
 
-    // Filter by Selected Dietary Tags (must satisfy all checked tags)
+    // Dietary Filter Checkboxes
     if (selectedDietary.length > 0) {
         filtered = filtered.filter((item) => {
-            return selectedDietary.every((dietTag) => item.dietary.includes(dietTag));
+            return selectedDietary.every((diet) => item.dietary.includes(diet));
         });
     }
 
@@ -340,7 +331,7 @@ function filterAndRenderMenu() {
 }
 
 /**
- * Resets all filters to initial view.
+ * Resets all filters back to default.
  */
 function resetAllFilters() {
     currentCategory = "all";
@@ -350,7 +341,7 @@ function resetAllFilters() {
     const searchInput = document.getElementById("menu-search");
     if (searchInput) searchInput.value = "";
 
-    const categoryBtns = document.querySelectorAll(".filter-btn");
+    const categoryBtns = document.querySelectorAll(".category-btn");
     categoryBtns.forEach((btn) => {
         if (btn.dataset.category === "all") {
             btn.classList.add("active");
@@ -368,11 +359,10 @@ function resetAllFilters() {
 }
 
 /**
- * Sets up listeners for interactive category tabs, search input, and dietary checkboxes.
+ * Sets up event listeners for search input, category tabs, and dietary checkboxes.
  */
 function initMenuControls() {
-    // Category Buttons
-    const categoryBtns = document.querySelectorAll(".filter-btn");
+    const categoryBtns = document.querySelectorAll(".category-btn");
     categoryBtns.forEach((btn) => {
         btn.addEventListener("click", () => {
             categoryBtns.forEach((b) => b.classList.remove("active"));
@@ -382,7 +372,6 @@ function initMenuControls() {
         });
     });
 
-    // Search Input with real-time feedback
     const searchInput = document.getElementById("menu-search");
     if (searchInput) {
         searchInput.addEventListener("input", (e) => {
@@ -391,7 +380,6 @@ function initMenuControls() {
         });
     }
 
-    // Dietary Filter Checkboxes
     const checkboxes = document.querySelectorAll(".dietary-checkbox");
     checkboxes.forEach((cb) => {
         cb.addEventListener("change", () => {
