@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu &amp; Specials | Zen Café Lagos</title>
+    <meta name="description" content="Explore the dynamic menu of Zen Café Lagos: single-origin African pour-overs, superfood smoothie bowls, wild sourdough pastries, and organic cold-pressed elixirs.">
+    <meta name="author" content="Okorie Emmanuel">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/main.css">
+    <script src="scripts/main.js" defer></script>
+    <script src="scripts/menu.js" defer></script>
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <header>
+        <div class="header-container">
+            <a href="index.html" class="brand-wrapper" aria-label="Zen Café Lagos Home">
+                <img src="images/site-logo.svg" alt="Zen Café Lagos Logo" class="site-logo" width="180" height="48">
+                <div>
+                    <span class="brand-title">Zen Café Lagos</span>
+                    <span class="brand-tagline">Eat Fresh &bull; Live Zen</span>
+                </div>
+            </a>
+
+            <button type="button" class="hamburger-btn" id="hamburger-btn" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="primary-nav">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <nav class="primary-nav" id="primary-nav" aria-label="Main Navigation">
+                <ul class="nav-list">
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li><a href="menu.html" class="nav-link active">Menu &amp; Specials</a></li>
+                    <li><a href="reservations.html" class="nav-link">Workspace &amp; Reservations</a></li>
+                    <li><a href="siteplan.html" class="nav-link">Site Plan</a></li>
+                    <li class="nav-cta-item"><a href="reservations.html" class="btn-nav-reserve">Book a Spot</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main id="main-content">
+        <section class="section-header-row" style="margin-top: 1rem;">
+            <h1>Artisanal Menu &amp; Specials</h1>
+            <p class="section-subtitle">
+                Handcrafted with single-origin beans, Nigerian superfoods, and whole organic ingredients. Filter by preference or save your favorites for your next visit.
+            </p>
+        </section>
+
+        <!-- Interactive Filter & Search Controls -->
+        <section class="menu-controls" aria-label="Menu Filters and Search">
+            <!-- Search Bar -->
+            <div class="search-bar-wrapper">
+                <span class="search-icon" aria-hidden="true">&#128269;</span>
+                <input type="search" id="menu-search" class="search-input" placeholder="Search single-origin coffee, smoothie bowls, sourdough toasts, or juices..." aria-label="Search menu items">
+            </div>
+
+            <!-- Category Tabs -->
+            <div class="filter-categories" role="group" aria-label="Category Selection">
+                <button type="button" class="filter-btn active" data-category="all">All Offerings</button>
+                <button type="button" class="filter-btn" data-category="coffee">Artisan Coffee</button>
+                <button type="button" class="filter-btn" data-category="smoothie">Smoothie Bowls</button>
+                <button type="button" class="filter-btn" data-category="bakery">Bakery &amp; Sourdough</button>
+                <button type="button" class="filter-btn" data-category="juice">Cold-Pressed Juices</button>
+                <button type="button" class="filter-btn" data-category="favorites">Saved Favorites &hearts;</button>
+            </div>
+
+            <!-- Dietary Preference Toggles -->
+            <div class="dietary-filters">
+                <span class="dietary-label">Dietary Filters:</span>
+                <label class="checkbox-label">
+                    <input type="checkbox" class="dietary-checkbox" value="vegan"> Vegan
+                </label>
+                <label class="checkbox-label">
+                    <input type="checkbox" class="dietary-checkbox" value="gf"> Gluten-Free
+                </label>
+                <label class="checkbox-label">
+                    <input type="checkbox" class="dietary-checkbox" value="keto"> Keto
+                </label>
+                <label class="checkbox-label">
+                    <input type="checkbox" class="dietary-checkbox" value="organic"> 100% Organic
+                </label>
+            </div>
+        </section>
+
+        <!-- Stats & Favorites Bar -->
+        <div class="menu-stats-bar">
+            <span id="showing-count">Loading offerings...</span>
+            <div class="favorites-counter-badge" title="Favorites saved in your browser storage">
+                <span aria-hidden="true">&hearts;</span>
+                <span>Saved Favorites: <strong id="fav-count">0</strong></span>
+            </div>
+        </div>
+
+        <!-- Dynamic Menu Cards Grid Container -->
+        <section class="menu-grid" id="menu-grid" aria-live="polite" aria-label="Dynamic Menu List">
+            <!-- Dynamically populated via menu.js -->
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-col">
+                <h3>Zen Café Lagos</h3>
+                <p>Artisanal coffee roastery, organic whole-food kitchen, and quiet co-working sanctuary situated in Lekki Phase 1, Lagos.</p>
+                <p>Built with modern semantic HTML, contemporary CSS, and responsive JavaScript for WDD 131.</p>
+            </div>
+
+            <div class="footer-col">
+                <h3>Quick Links</h3>
+                <ul class="footer-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="menu.html">Menu &amp; Specials</a></li>
+                    <li><a href="reservations.html">Workspace &amp; Reservations</a></li>
+                    <li><a href="siteplan.html">Project Site Plan</a></li>
+                    <li><a href="references.html">References &amp; Citations</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h3>Contact &amp; Location</h3>
+                <p>Plot 14, Admiralty Way, Lekki Phase 1</p>
+                <p>Lagos State, Nigeria</p>
+                <p>Phone: +234 (0) 814 555 9362</p>
+                <p>Email: contact@zencafelagos.com</p>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy;<span id="currentyear"></span> 🌸 Okorie Emmanuel 🌸 Lagos, Nigeria</p>
+            <p id="lastModified"></p>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Workspace &amp; Table Reservations | Zen Café Lagos</title>
+    <meta name="description" content="Reserve a hot desk, sound-dampened call booth, collaboration table, or coffee tasting lounge at Zen Café Lagos in Lekki Phase 1 with fiber Wi-Fi and solar power.">
+    <meta name="author" content="Okorie Emmanuel">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/main.css">
+    <script src="scripts/main.js" defer></script>
+    <script src="scripts/reservations.js" defer></script>
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <header>
+        <div class="header-container">
+            <a href="index.html" class="brand-wrapper" aria-label="Zen Café Lagos Home">
+                <img src="images/site-logo.svg" alt="Zen Café Lagos Logo" class="site-logo" width="180" height="48">
+                <div>
+                    <span class="brand-title">Zen Café Lagos</span>
+                    <span class="brand-tagline">Eat Fresh &bull; Live Zen</span>
+                </div>
+            </a>
+
+            <button type="button" class="hamburger-btn" id="hamburger-btn" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="primary-nav">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <nav class="primary-nav" id="primary-nav" aria-label="Main Navigation">
+                <ul class="nav-list">
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li><a href="menu.html" class="nav-link">Menu &amp; Specials</a></li>
+                    <li><a href="reservations.html" class="nav-link active">Workspace &amp; Reservations</a></li>
+                    <li><a href="siteplan.html" class="nav-link">Site Plan</a></li>
+                    <li class="nav-cta-item"><a href="reservations.html" class="btn-nav-reserve">Book a Spot</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main id="main-content">
+        <section class="section-header-row" style="margin-top: 1rem;">
+            <h1>Workspace &amp; Table Reservations</h1>
+            <p class="section-subtitle">
+                Reserve your productive sanctuary in Lekki Phase 1. Enjoy guaranteed power backup, high-speed fiber internet, and fresh whole nourishment.
+            </p>
+        </section>
+
+        <!-- Dynamic Booking Confirmation Banner (revealed on form submission) -->
+        <section id="confirmation-banner" class="confirmation-container" aria-live="polite" aria-label="Booking Confirmation Notice">
+            <!-- Populated via reservations.js -->
+        </section>
+
+        <div class="reservation-layout">
+            <!-- Standards-Based HTML Form -->
+            <section class="booking-form-card" aria-labelledby="form-heading">
+                <h2 id="form-heading">Reserve Your Spot</h2>
+                <p class="form-instructions">Fields marked with an asterisk (<span class="required-star">*</span>) are mandatory.</p>
+
+                <form id="reservation-form" method="post" action="#">
+                    <!-- Fieldset 1: Guest Contact Information -->
+                    <fieldset>
+                        <legend>1. Contact Information</legend>
+                        
+                        <div class="form-group">
+                            <label for="res-name">Full Name <span class="required-star">*</span></label>
+                            <input type="text" id="res-name" name="name" class="form-control" placeholder="e.g. Adeola Balogun" required autocomplete="name">
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="res-email">Email Address <span class="required-star">*</span></label>
+                                <input type="email" id="res-email" name="email" class="form-control" placeholder="adeola@example.com" required autocomplete="email">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="res-phone">Phone Number <span class="required-star">*</span></label>
+                                <input type="tel" id="res-phone" name="phone" class="form-control" placeholder="+234 814 000 0000" pattern="[0-9+ \-]{8,20}" required autocomplete="tel">
+                                <span class="form-hint">Format: +234 followed by your mobile number</span>
+                            </div>
+                        </div>
+                    </fieldset>
+
+                    <!-- Fieldset 2: Space Type & Scheduling -->
+                    <fieldset>
+                        <legend>2. Reservation Details</legend>
+
+                        <div class="form-group">
+                            <label for="res-space">Space Selection <span class="required-star">*</span></label>
+                            <select id="res-space" name="space" class="form-control" required>
+                                <option value="" disabled selected>Choose a workspace or table type...</option>
+                                <option value="hot-desk">Ergonomic Hot Desk (Co-Working Hall) &bull; ₦3,500/day</option>
+                                <option value="quiet-booth">Private Sound-Dampened Call Booth &bull; ₦5,000/2hrs</option>
+                                <option value="meeting-table">Team Collaboration Table (4-6 persons) &bull; ₦12,000/session</option>
+                                <option value="tasting-table">Artisan Coffee Tasting Lounge Table &bull; Free with order</option>
+                                <option value="garden-patio">Coastal Garden Patio Table &bull; Free with order</option>
+                            </select>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="res-date">Reservation Date <span class="required-star">*</span></label>
+                                <input type="date" id="res-date" name="date" class="form-control" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="res-timeslot">Time Slot <span class="required-star">*</span></label>
+                                <select id="res-timeslot" name="timeslot" class="form-control" required>
+                                    <option value="" disabled selected>Select session window...</option>
+                                    <option value="Morning Focus (08:00 AM - 12:00 PM)">Morning Focus (08:00 AM &ndash; 12:00 PM)</option>
+                                    <option value="Afternoon Sprint (12:00 PM - 05:00 PM)">Afternoon Sprint (12:00 PM &ndash; 05:00 PM)</option>
+                                    <option value="Full Day Sanctuary (08:00 AM - 08:00 PM)">Full Day Sanctuary (08:00 AM &ndash; 08:00 PM)</option>
+                                    <option value="Sunset Lounge (05:00 PM - 08:00 PM)">Sunset Lounge (05:00 PM &ndash; 08:00 PM)</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="res-guests">Number of Guests / Party Size <span class="required-star">*</span></label>
+                            <input type="number" id="res-guests" name="guests" class="form-control" min="1" max="10" value="1" required>
+                        </div>
+                    </fieldset>
+
+                    <!-- Fieldset 3: Optional Productivity Amenities -->
+                    <fieldset>
+                        <legend>3. Optional Add-On Amenities</legend>
+                        <p class="form-hint" style="margin-bottom: 0.5rem;">Select any complimentary or pre-ordered perks:</p>
+                        
+                        <div class="amenities-group">
+                            <label class="amenity-checkbox">
+                                <input type="checkbox" name="amenities" value="Dedicated Redundant Starlink Wi-Fi Channel">
+                                <span>Dedicated Starlink Satellite Wi-Fi Channel</span>
+                            </label>
+
+                            <label class="amenity-checkbox">
+                                <input type="checkbox" name="amenities" value="Pre-brewed Ethiopian Cold Brew Carafe">
+                                <span>Pre-brewed Ethiopian Cold Brew Carafe</span>
+                            </label>
+
+                            <label class="amenity-checkbox">
+                                <input type="checkbox" name="amenities" value="Dual External Monitor Setup (HDMI/USB-C)">
+                                <span>Dual External Monitor Setup (HDMI/USB-C)</span>
+                            </label>
+
+                            <label class="amenity-checkbox">
+                                <input type="checkbox" name="amenities" value="Chef Prepared Acai Bowl at 11:00 AM">
+                                <span>Chef-Prepared Acai Bowl at 11:00 AM</span>
+                            </label>
+                        </div>
+                    </fieldset>
+
+                    <!-- Fieldset 4: Special Requests -->
+                    <fieldset>
+                        <legend>4. Special Requests &amp; Notes</legend>
+                        
+                        <div class="form-group">
+                            <label for="res-notes">Dietary Needs or Workspace Preferences</label>
+                            <textarea id="res-notes" name="notes" class="form-control" placeholder="Specify any dietary restrictions, accessibility requirements, or quiet corner preferences..."></textarea>
+                        </div>
+
+                        <div class="terms-row">
+                            <label class="amenity-checkbox">
+                                <input type="checkbox" id="res-terms" name="terms" required>
+                                <span>I agree to the Zen Café quiet zone policy and understand that seats are held for 20 minutes past reservation time. <span class="required-star">*</span></span>
+                            </label>
+                        </div>
+                    </fieldset>
+
+                    <div class="submit-btn-row">
+                        <button type="submit" class="btn btn-secondary submit-btn">Confirm Reservation &rarr;</button>
+                    </div>
+                </form>
+            </section>
+
+            <!-- Sidebar: Space Options Guide & User Booking History (localStorage) -->
+            <aside aria-label="Reservation Guidelines and History">
+                <!-- User's Saved Bookings History (from localStorage) -->
+                <div class="saved-bookings-card" style="margin-bottom: 2rem;">
+                    <div class="saved-bookings-header">
+                        <h3>Your Recent Bookings (<span id="history-count">0</span>)</h3>
+                        <button type="button" id="btn-clear-history" class="btn-clear-history">Clear History</button>
+                    </div>
+                    <div id="bookings-history-list" aria-live="polite">
+                        <!-- Populated dynamically via reservations.js -->
+                    </div>
+                </div>
+
+                <!-- Sanctuary Perks Card -->
+                <div class="saved-bookings-card">
+                    <h3 style="margin-bottom: 0.75rem;">Sanctuary Amenities</h3>
+                    <ul style="padding-left: 1.25rem; font-size: 0.9rem; color: #444; display: flex; flex-direction: column; gap: 0.5rem;">
+                        <li><strong>Uninterrupted Power:</strong> Solar + Inverter battery bank with automatic switchover.</li>
+                        <li><strong>High-Speed Fiber:</strong> Dual internet service providers with 200Mbps bandwidth.</li>
+                        <li><strong>Artisan Refuels:</strong> 10% discount on all artisan pour-overs during co-working sessions.</li>
+                        <li><strong>Secure Parking:</strong> Gated facility with dedicated security guards on Admiralty Way.</li>
+                    </ul>
+                </div>
+            </aside>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-col">
+                <h3>Zen Café Lagos</h3>
+                <p>Artisanal coffee roastery, organic whole-food kitchen, and quiet co-working sanctuary situated in Lekki Phase 1, Lagos.</p>
+                <p>Built with modern semantic HTML, contemporary CSS, and responsive JavaScript for WDD 131.</p>
+            </div>
+
+            <div class="footer-col">
+                <h3>Quick Links</h3>
+                <ul class="footer-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="menu.html">Menu &amp; Specials</a></li>
+                    <li><a href="reservations.html">Workspace &amp; Reservations</a></li>
+                    <li><a href="siteplan.html">Project Site Plan</a></li>
+                    <li><a href="references.html">References &amp; Citations</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h3>Contact &amp; Location</h3>
+                <p>Plot 14, Admiralty Way, Lekki Phase 1</p>
+                <p>Lagos State, Nigeria</p>
+                <p>Phone: +234 (0) 814 555 9362</p>
+                <p>Email: contact@zencafelagos.com</p>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy;<span id="currentyear"></span> 🌸 Okorie Emmanuel 🌸 Lagos, Nigeria</p>
+            <p id="lastModified"></p>
+        </div>
+    </footer>
+</body>
+</html>

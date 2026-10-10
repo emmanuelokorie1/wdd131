@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zen Café Lagos | Artisan Coffee, Organic Bowls &amp; Co-Working Sanctuary</title>
+    <meta name="description" content="Discover Zen Café Lagos in Lekki Phase 1: specialty single-origin coffees, organic smoothie bowls, fresh sourdough bakery, and a quiet fiber-powered co-working sanctuary.">
+    <meta name="author" content="Okorie Emmanuel">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/main.css">
+    <script src="scripts/main.js" defer></script>
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <header>
+        <div class="header-container">
+            <a href="index.html" class="brand-wrapper" aria-label="Zen Café Lagos Home">
+                <img src="images/site-logo.svg" alt="Zen Café Lagos Logo" class="site-logo" width="180" height="48">
+                <div>
+                    <span class="brand-title">Zen Café Lagos</span>
+                    <span class="brand-tagline">Eat Fresh &bull; Live Zen</span>
+                </div>
+            </a>
+
+            <button type="button" class="hamburger-btn" id="hamburger-btn" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="primary-nav">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <nav class="primary-nav" id="primary-nav" aria-label="Main Navigation">
+                <ul class="nav-list">
+                    <li><a href="index.html" class="nav-link active">Home</a></li>
+                    <li><a href="menu.html" class="nav-link">Menu &amp; Specials</a></li>
+                    <li><a href="reservations.html" class="nav-link">Workspace &amp; Reservations</a></li>
+                    <li><a href="siteplan.html" class="nav-link">Site Plan</a></li>
+                    <li class="nav-cta-item"><a href="reservations.html" class="btn-nav-reserve">Book a Spot</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main id="main-content">
+        <!-- Live Operating Hours Status Bar -->
+        <div class="status-bar" id="live-cafe-status" aria-live="polite">
+            <span class="status-badge status-open">
+                <span class="pulse-dot"></span>
+                Checking Hours...
+            </span>
+            <span class="status-hours-text">Admiralty Way, Lekki Phase 1, Lagos</span>
+        </div>
+
+        <!-- Hero Section -->
+        <section class="hero-section" aria-labelledby="hero-heading">
+            <div class="hero-content">
+                <span class="hero-pill">Artisan Roastery &bull; Lekki Phase 1</span>
+                <h1 id="hero-heading" class="hero-title">Mindful Nourishment. Focused Living.</h1>
+                <p class="hero-tagline">
+                    Experience Lekki's premier artisan coffee house and co-working sanctuary. We handcraft single-origin African roasts, blend nutrient-dense organic smoothie bowls, and provide a quiet, solar-backed space built for your best thinking.
+                </p>
+                <div class="hero-actions">
+                    <a href="menu.html" class="btn btn-secondary">Explore Our Menu</a>
+                    <a href="reservations.html" class="btn btn-primary">Reserve a Workspace</a>
+                </div>
+            </div>
+            <div class="hero-media">
+                <img src="images/hero-cafe.jpg" alt="Interior view of Zen Café Lagos sanctuary with wooden desks and lush greenery" width="1200" height="675" fetchpriority="high">
+            </div>
+        </section>
+
+        <!-- Core Offerings Section -->
+        <section class="section-block" aria-labelledby="offerings-heading">
+            <div class="section-header-row">
+                <h2 id="offerings-heading">Artisan Craft &bull; Three Pillars of Zen</h2>
+                <p class="section-subtitle">Thoughtfully curated experiences designed to recharge your body and inspire your mind.</p>
+            </div>
+
+            <div class="cards-grid">
+                <!-- Card 1: Artisan Coffee -->
+                <article class="offering-card">
+                    <div class="offering-img-wrapper">
+                        <img src="images/artisan-coffee.jpg" alt="Specialty pour-over coffee brewing in Chemex carafe" loading="lazy" width="800" height="600">
+                        <span class="offering-badge">Single Origin</span>
+                    </div>
+                    <div class="offering-content">
+                        <h3>Specialty Pour-Overs &amp; Cold Brew</h3>
+                        <p>Ethically sourced Arabica beans from the high plateaus of Taraba State and East Africa, custom roasted in-house weekly for vibrant floral and citrus clarity.</p>
+                        <a href="menu.html" class="offering-link">Browse Coffee Selection &rarr;</a>
+                    </div>
+                </article>
+
+                <!-- Card 2: Smoothie Bowls -->
+                <article class="offering-card">
+                    <div class="offering-img-wrapper">
+                        <img src="images/smoothie-bowl.jpg" alt="Vibrant acai smoothie bowl garnished with mango and coconut" loading="lazy" width="800" height="600">
+                        <span class="offering-badge">Superfood</span>
+                    </div>
+                    <div class="offering-content">
+                        <h3>Organic Smoothie Bowls &amp; Fare</h3>
+                        <p>100% plant-powered bowls featuring wild Amazonian acai, Benue mangoes, Nigerian baobab, fresh tiger nut milk, and grain-free raw superfoods.</p>
+                        <a href="menu.html" class="offering-link">See Organic Bowls &rarr;</a>
+                    </div>
+                </article>
+
+                <!-- Card 3: Co-Working Sanctuary -->
+                <article class="offering-card">
+                    <div class="offering-img-wrapper">
+                        <img src="images/coworking-space.jpg" alt="Quiet sunlit co-working sanctuary with ergonomic seating" loading="lazy" width="800" height="600">
+                        <span class="offering-badge">High-Speed Fiber</span>
+                    </div>
+                    <div class="offering-content">
+                        <h3>Distraction-Free Co-Working Zone</h3>
+                        <p>Engineered for deep work. Uninterrupted dual-inverter solar power, redundant 200Mbps fiber internet, private call booths, and ergonomic seating.</p>
+                        <a href="reservations.html" class="offering-link">Book a Work Desk &rarr;</a>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- Why Choose Zen Café: Amenities & Standards -->
+        <section class="section-block" aria-labelledby="amenities-heading">
+            <div class="section-header-row">
+                <h2 id="amenities-heading">The Zen Café Sanctuary Standard</h2>
+                <p class="section-subtitle">Everything you need for an inspiring workday or relaxing morning in Lagos.</p>
+            </div>
+
+            <div class="features-grid">
+                <div class="feature-box">
+                    <div class="feature-icon" aria-hidden="true">&#9889;</div>
+                    <div class="feature-body">
+                        <h3>100% Unbroken Solar &amp; Inverter Power</h3>
+                        <p>Never lose your momentum. Our solar battery bank guarantees zero interruption, keeping your laptops and phones charged all day.</p>
+                    </div>
+                </div>
+
+                <div class="feature-box">
+                    <div class="feature-icon" aria-hidden="true">&#128225;</div>
+                    <div class="feature-body">
+                        <h3>Ultra-Fast Dual Fiber Connectivity</h3>
+                        <p>Blazing fast multi-carrier fiber backed by low-latency satellite Wi-Fi so your video calls, deployments, and downloads stream seamlessly.</p>
+                    </div>
+                </div>
+
+                <div class="feature-box">
+                    <div class="feature-icon" aria-hidden="true">&#127807;</div>
+                    <div class="feature-body">
+                        <h3>Clean, Whole-Food Nutrition</h3>
+                        <p>No refined sugars, artificial preservatives, or hydrogenated oils. We craft our pastries with pure sourdough cultures and organic butter.</p>
+                    </div>
+                </div>
+
+                <div class="feature-box">
+                    <div class="feature-icon" aria-hidden="true">&#127911;</div>
+                    <div class="feature-body">
+                        <h3>Dedicated Acoustic Focus Zones</h3>
+                        <p>Sound-dampened booths for confidential client meetings and a library-quiet terrace where you can dive into deep creative flow.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Community Voices / Testimonials -->
+        <section class="section-block" aria-labelledby="testimonials-heading">
+            <div class="section-header-row">
+                <h2 id="testimonials-heading">Loved by Lagos Creators &amp; Remote Teams</h2>
+                <p class="section-subtitle">Hear from the founders, artists, and wellness seekers who make Zen Café their daily home.</p>
+            </div>
+
+            <div class="testimonials-grid">
+                <article class="testimonial-card">
+                    <div class="testimonial-stars" aria-label="5 out of 5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                    <p class="testimonial-quote">"Finding reliable power and truly quiet workspace in Lekki was a headache until Zen Café opened. The Taraba pour-over is the cleanest coffee in Lagos."</p>
+                    <p class="testimonial-author">Adeola Balogun</p>
+                    <p class="testimonial-role">Senior Product Designer &bull; Remote</p>
+                </article>
+
+                <article class="testimonial-card">
+                    <div class="testimonial-stars" aria-label="5 out of 5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                    <p class="testimonial-quote">"The Acai and Baobab bowl is my post-workout staple. The ingredients taste genuine and fresh, and the staff treats everyone like old friends."</p>
+                    <p class="testimonial-author">Chinedu Okafor</p>
+                    <p class="testimonial-role">Triathlete &amp; Wellness Coach</p>
+                </article>
+
+                <article class="testimonial-card">
+                    <div class="testimonial-stars" aria-label="5 out of 5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                    <p class="testimonial-quote">"Our small software team books the collaboration table every Thursday for sprint planning. Great Wi-Fi, incredible cold brews, and serene ambiance."</p>
+                    <p class="testimonial-author">Fatima Al-Hassan</p>
+                    <p class="testimonial-role">Engineering Lead, Fintech</p>
+                </article>
+            </div>
+        </section>
+
+        <!-- Location & Hours Section -->
+        <section class="section-block" aria-labelledby="location-heading">
+            <div class="visit-info-card">
+                <div class="visit-details">
+                    <h2 id="location-heading">Visit Our Lekki Sanctuary</h2>
+                    <p>Located in the heart of Lekki Phase 1, just steps away from Admiralty Way. Peaceful indoor garden setting with ample secure parking.</p>
+                    
+                    <div class="info-item">
+                        <span class="info-icon" aria-hidden="true">&#128205;</span>
+                        <div>
+                            <strong>Physical Address:</strong><br>
+                            Plot 14, Admiralty Way, Lekki Phase 1, Lagos, Nigeria
+                        </div>
+                    </div>
+
+                    <div class="info-item">
+                        <span class="info-icon" aria-hidden="true">&#128222;</span>
+                        <div>
+                            <strong>Direct Inquiries &amp; Orders:</strong><br>
+                            +234 (0) 814 555 9362 &bull; hello@zencafelagos.com
+                        </div>
+                    </div>
+
+                    <div style="margin-top: 1.5rem;">
+                        <a href="reservations.html" class="btn btn-secondary">Reserve a Desk or Table</a>
+                    </div>
+                </div>
+
+                <div class="visit-hours">
+                    <h3>Operating Hours</h3>
+                    <p>Open 7 days a week for early risers, remote workers, and relaxed evenings.</p>
+                    <table class="hours-table" aria-label="Zen Café Weekly Operating Hours">
+                        <tbody>
+                            <tr>
+                                <td>Monday &ndash; Friday</td>
+                                <td>7:00 AM &ndash; 8:00 PM</td>
+                            </tr>
+                            <tr>
+                                <td>Saturday</td>
+                                <td>8:00 AM &ndash; 9:00 PM</td>
+                            </tr>
+                            <tr>
+                                <td>Sunday</td>
+                                <td>9:00 AM &ndash; 6:00 PM</td>
+                            </tr>
+                            <tr>
+                                <td>Public Holidays</td>
+                                <td>8:00 AM &ndash; 7:00 PM</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-col">
+                <h3>Zen Café Lagos</h3>
+                <p>Artisanal coffee roastery, organic whole-food kitchen, and quiet co-working sanctuary situated in Lekki Phase 1, Lagos.</p>
+                <p>Built with modern semantic HTML, contemporary CSS, and responsive JavaScript for WDD 131.</p>
+            </div>
+
+            <div class="footer-col">
+                <h3>Quick Links</h3>
+                <ul class="footer-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="menu.html">Menu &amp; Specials</a></li>
+                    <li><a href="reservations.html">Workspace &amp; Reservations</a></li>
+                    <li><a href="siteplan.html">Project Site Plan</a></li>
+                    <li><a href="references.html">References &amp; Citations</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h3>Contact &amp; Location</h3>
+                <p>Plot 14, Admiralty Way, Lekki Phase 1</p>
+                <p>Lagos State, Nigeria</p>
+                <p>Phone: +234 (0) 814 555 9362</p>
+                <p>Email: contact@zencafelagos.com</p>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy;<span id="currentyear"></span> 🌸 Okorie Emmanuel 🌸 Lagos, Nigeria</p>
+            <p id="lastModified"></p>
+        </div>
+    </footer>
+</body>
+</html>
