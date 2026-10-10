@@ -9,22 +9,47 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/main.css">
     <link rel="stylesheet" href="styles/siteplan.css">
     <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
-    <script src="scripts/siteplan.js" defer></script>
+    <script src="scripts/main.js" defer></script>
 </head>
 <body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
     <header>
         <div class="header-container">
-            <div class="brand-wrapper">
-                <img src="images/site-logo.svg" alt="Zen Café Lagos Logo" class="site-logo" width="280" height="70">
-                <span class="site-title">Zen Café Lagos</span>
-            </div>
-            <span class="plan-subtitle">Website Planning Document &bull; WDD 131</span>
+            <a href="index.html" class="brand-wrapper" aria-label="Zen Café Lagos Home">
+                <img src="images/logo-icon.svg" alt="Zen Café Logo Icon" class="brand-icon" width="38" height="38">
+                <div class="brand-text">
+                    <span class="brand-title">Zen Café Lagos</span>
+                    <span class="brand-tagline">Eat Fresh &bull; Live Zen</span>
+                </div>
+            </a>
+
+            <button type="button" class="hamburger-btn" id="hamburger-btn" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="primary-nav">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <nav class="primary-nav" id="primary-nav" aria-label="Main Navigation">
+                <ul class="nav-list">
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li><a href="menu.html" class="nav-link">Menu &amp; Specials</a></li>
+                    <li><a href="reservations.html" class="nav-link">Reservations</a></li>
+                    <li><a href="siteplan.html" class="nav-link active">Site Plan</a></li>
+                    <li><a href="reservations.html" class="btn-nav-reserve">Book a Spot</a></li>
+                </ul>
+            </nav>
         </div>
     </header>
 
-    <main>
+    <main id="main-content">
+        <div class="plan-header-banner">
+            <span class="plan-badge">WDD 131 Final Project Planning</span>
+            <h1 class="plan-page-title">Website Planning Document</h1>
+            <p class="plan-page-subtitle">Zen Café Lagos &bull; Authentic Coffee Roastery &amp; Workspace &bull; Okorie Emmanuel</p>
+        </div>
         <!-- Section 1: Site Name -->
         <section class="plan-section" id="site-name">
             <div class="section-header">
