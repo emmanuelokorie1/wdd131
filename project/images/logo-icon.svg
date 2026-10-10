@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 70 70" width="44" height="44" aria-label="Zen Café Leaf and Cup Icon">
+  <!-- Coffee Cup -->
+  <path d="M 12 28 Q 12 52, 34 52 Q 56 52, 56 28 Z" fill="#FFFFFF" />
+  <!-- Handle -->
+  <path d="M 56 32 Q 67 32, 67 40 Q 67 48, 56 48" fill="none" stroke="#FFFFFF" stroke-width="4.5" stroke-linecap="round"/>
+  <!-- Saucer -->
+  <path d="M 6 56 Q 34 61, 62 56" fill="none" stroke="#C86D51" stroke-width="4" stroke-linecap="round"/>
+  <!-- Zen Leaf -->
+  <path d="M 28 22 C 28 10, 35 6, 35 6 C 35 6, 42 10, 42 22 C 42 28, 28 28, 28 22 Z" fill="#C86D51"/>
+</svg>
