@@ -872,10 +872,21 @@ main {
     padding: 2rem 1.5rem;
 }
 
+/* Responsive Table Container */
+.table-container {
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    margin: 1.25rem 0;
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-sm);
+}
+
 .ref-table {
     width: 100%;
+    min-width: 540px;
     border-collapse: collapse;
-    margin: 1.5rem 0;
+    margin: 0;
     font-size: 0.92rem;
 }
 
