@@ -1164,6 +1164,7 @@ textarea.form-control {
     border: 1px solid var(--border-color);
     box-shadow: var(--shadow-md);
     padding: 2.5rem 1.75rem;
+    
 }
 
 .references-table {
